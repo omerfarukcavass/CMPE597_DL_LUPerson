@@ -17,8 +17,6 @@ LUPerson is currently the largest unlabeled dataset for Person Re-identification
 | Model | path |
 | :------: | :------: |
 | ResNet50 | [R50](https://drive.google.com/file/d/1pFyAdt9BOZCtzaLiE-W3CsX_kgWABKK6/view?usp=sharing) |
-| ResNet101 | [R101](https://drive.google.com/file/d/1Ckn0iVtx-IhGQackRECoMR7IVVr4FC5h/view?usp=sharing) |
-| ResNet152 | [R152](https://drive.google.com/file/d/1nGGatER6--ZTHdcTryhWEqKRKYU-Mrl_/view?usp=sharing) |
 
 ## Finetuned Results
 For MGN with ResNet50:
@@ -32,19 +30,11 @@ For MGN with ResNet50:
 
 These numbers are a little different from those reported in our paper, and most are slightly better.
 
-For MGN with ResNet101:
-|Dataset | mAP | cmc1 | path |
-|:------:|:---:|:----:|:----:|
-| MSMT17 | 68.41/81.12 | 86.28/88.27 | - |
-| DukeMTMC | 84.15/92.77 | 91.88/93.99 | - |
-| Market1501 | 91.86/96.21 | 96.56/97.03 | - |
-| CUHK03-L | 75.98/86.73 | 75.86/84.07 | - |
-
 **The numbers are in the format of `without RR`/`with RR`**.
 
 
 ## Citation
-If you find this code useful for your research, please cite our paper.
+
 ```
 @article{fu2020unsupervised,
   title={Unsupervised Pre-training for Person Re-identification},
@@ -53,6 +43,3 @@ If you find this code useful for your research, please cite our paper.
   year={2021}
 }
 ```
-
-## News
-We extend our `LUPerson` to `LUPerson-NL` with `Noisy Labels` which are generated from tracking algorithm, Please check for our CVPR22 paper [Large-Scale Pre-training for Person Re-identification with Noisy Labels](https://arxiv.org/abs/2203.16533). And LUPerson-NL dataset is available at https://github.com/DengpanFu/LUPerson-NL
