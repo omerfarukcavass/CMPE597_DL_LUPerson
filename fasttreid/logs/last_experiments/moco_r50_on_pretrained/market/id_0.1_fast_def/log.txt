@@ -1,0 +1,651 @@
+[06/04 12:49:45] fastreid INFO: Rank of current process: 0. World size: 1
+[06/04 12:49:45] fastreid INFO: Environment info:
+----------------------  ---------------------------------------------------------------------------------------------------------------------------
+sys.platform            win32
+Python                  3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+numpy                   1.22.3
+fastreid                0.1.0 @C:\nezih_data\edu\BOUN\Courses\In process\CMPE597_Sp.Tp.DeepLearning\Project\code\LUPerson-main\fasttreid\.\fastreid
+FASTREID_ENV_MODULE     <not set>
+PyTorch                 1.11.0+cu113 @C:\Users\nezih\AppData\Roaming\Python\Python38\site-packages\torch
+PyTorch debug build     False
+GPU available           True
+GPU 0                   NVIDIA GeForce RTX 2060
+CUDA_HOME               None
+Pillow                  9.0.1
+torchvision             0.12.0+cu113 @C:\Users\nezih\AppData\Roaming\Python\Python38\site-packages\torchvision
+torchvision arch flags  C:\Users\nezih\AppData\Roaming\Python\Python38\site-packages\torchvision\_C.pyd
+cv2                     4.5.5
+----------------------  ---------------------------------------------------------------------------------------------------------------------------
+PyTorch built with:
+  - C++ Version: 199711
+  - MSVC 192829337
+  - Intel(R) Math Kernel Library Version 2020.0.2 Product Build 20200624 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v2.5.2 (Git Hash a9302535553c73243c632ad3c4c80beec3d19a1e)
+  - OpenMP 2019
+  - LAPACK is enabled (usually provided by MKL)
+  - CPU capability usage: AVX2
+  - CUDA Runtime 11.3
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_61,code=sm_61;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86;-gencode;arch=compute_37,code=compute_37
+  - CuDNN 8.2
+  - Magma 2.5.4
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=11.3, CUDNN_VERSION=8.2.0, CXX_COMPILER=C:/actions-runner/_work/pytorch/pytorch/builder/windows/tmp_bin/sccache-cl.exe, CXX_FLAGS=/DWIN32 /D_WINDOWS /GR /EHsc /w /bigobj -DUSE_PTHREADPOOL -openmp:experimental -IC:/actions-runner/_work/pytorch/pytorch/builder/windows/mkl/include -DNDEBUG -DUSE_KINETO -DLIBKINETO_NOCUPTI -DUSE_FBGEMM -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -DEDGE_PROFILER_USE_KINETO, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.11.0, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=OFF, USE_MPI=OFF, USE_NCCL=OFF, USE_NNPACK=OFF, USE_OPENMP=ON, USE_ROCM=OFF, 
+
+[06/04 12:49:45] fastreid INFO: Command line arguments: Namespace(config_file='./configs/CMDM/mgn_R50_moco.yml', dist_url='tcp://127.0.0.1:38987', eval_only=False, finetune=False, machine_rank=0, num_gpus=0, num_machines=1, opts=['MODEL.BACKBONE.PRETRAIN_PATH', 'ckpt_latest_lupMocoR50.pth', 'DATASETS.ROOT', '../data', 'INPUT.DO_AUTOAUG', 'False', 'TEST.EVAL_PERIOD', '60', 'DATASETS.KWARGS', 'data_name:market+split_mode:id+split_ratio:0.1', 'OUTPUT_DIR', 'logs/last/moco_r50_adamlarinki/market/id_0.1_fast_def'], resume=False)
+[06/04 12:49:45] fastreid INFO: Contents of args.config_file=./configs/CMDM/mgn_R50_moco.yml:
+_BASE_: "../Base-MGN.yml"
+
+MODEL:
+  BACKBONE:
+    WITH_IBN: False
+    EXTRA_BN: True
+  PIXEL_MEAN: [89.896, 79.200, 80.073]
+  PIXEL_STD: [63.872, 64.305, 63.839]
+INPUT:
+  REA:
+    MEAN: [0.0, 0.0, 0.0]
+  DO_AUTOAUG: False
+SOLVER:
+  HEADS_LR_FACTOR: 1.0
+  BACKBONE_BN_LR_FACTOR: 1.0
+  CHECKPOINT_PERIOD: 40
+
+DATASETS:
+  NAMES: ("CMDM",)
+  TESTS: ("CMDM",)
+  KWARGS: 'data_name:market+split_mode:id+split_ratio:0.1'
+  ROOT: "../data"
+
+TEST:
+  EVAL_PERIOD: 20
+
+OUTPUT_DIR: "../logs/cmdm/"
+
+[06/04 12:49:45] fastreid INFO: Running with full config:
+CUDNN_BENCHMARK: True
+DATALOADER:
+  NAIVE_WAY: True
+  NUM_INSTANCE: 16
+  NUM_WORKERS: 8
+  PK_SAMPLER: True
+DATASETS:
+  COMBINEALL: False
+  IS_LMDB: False
+  KWARGS: data_name:market+split_mode:id+split_ratio:0.1
+  NAMES: ('CMDM',)
+  ROOT: ../data
+  TESTS: ('CMDM',)
+INPUT:
+  AF: False
+  CJ:
+    BRIGHTNESS: 0.15
+    CONTRAST: 0.15
+    ENABLED: False
+    HUE: 0.0
+    PROB: 0.8
+    SATURATION: 0.0
+  DO_AUGMIX: False
+  DO_AUTOAUG: False
+  DO_FLIP: True
+  DO_PAD: True
+  FLIP_PROB: 0.5
+  PADDING: 10
+  PADDING_MODE: constant
+  REA:
+    ENABLED: True
+    MEAN: [0.0, 0.0, 0.0]
+    PROB: 0.5
+  RPT:
+    ENABLED: False
+    PROB: 0.5
+  SIZE_TEST: [384, 128]
+  SIZE_TRAIN: [384, 128]
+MODEL:
+  BACKBONE:
+    DEPTH: 50x
+    EXTRA_BN: True
+    FEAT_DIM: 2048
+    LAST_STRIDE: 1
+    NAME: build_resnet_backbone
+    NORM: BN
+    PRETRAIN: True
+    PRETRAIN_PATH: ckpt_latest_lupMocoR50.pth
+    WITH_IBN: False
+    WITH_NL: False
+    WITH_SE: False
+  DEVICE: cuda
+  FREEZE_LAYERS: ['backbone', 'b1', 'b2', 'b3']
+  HEADS:
+    CLS_LAYER: circleSoftmax
+    EMBEDDING_DIM: 256
+    MARGIN: 0.35
+    NAME: EmbeddingHead
+    NECK_FEAT: after
+    NORM: BN
+    NUM_CLASSES: 0
+    POOL_LAYER: gempoolP
+    SCALE: 64
+    WITH_BNNECK: True
+  LOSSES:
+    CE:
+      ALPHA: 0.2
+      EPSILON: 0.1
+      SCALE: 1.0
+    CIRCLE:
+      ALPHA: 128
+      MARGIN: 0.25
+      SCALE: 1.0
+    FL:
+      ALPHA: 0.25
+      GAMMA: 2
+      SCALE: 1.0
+    NAME: ('CrossEntropyLoss', 'TripletLoss')
+    TRI:
+      HARD_MINING: True
+      MARGIN: 0.0
+      NORM_FEAT: False
+      SCALE: 1.0
+  META_ARCHITECTURE: MGN
+  PIXEL_MEAN: [89.896, 79.2, 80.073]
+  PIXEL_STD: [63.872, 64.305, 63.839]
+  WEIGHTS: 
+OUTPUT_DIR: logs/last/moco_r50_adamlarinki/market/id_0.1_fast_def
+SOLVER:
+  AMP_ENABLED: False
+  BACKBONE_BN_LR_FACTOR: 1.0
+  BASE_LR: 0.00035
+  BIAS_LR_FACTOR: 1.0
+  CHECKPOINT_PERIOD: 40
+  DELAY_ITERS: 30
+  ETA_MIN_LR: 7.7e-07
+  FREEZE_ITERS: 10
+  GAMMA: 0.1
+  HEADS_LR_FACTOR: 1.0
+  IMS_PER_BATCH: 64
+  MAX_ITER: 600
+  MOMENTUM: 0.9
+  OPT: Adam
+  SCHED: WarmupCosineAnnealingLR
+  STEPS: [30, 60]
+  SWA:
+    ENABLED: False
+    ETA_MIN_LR: 3.5e-06
+    ITER: 10
+    LR_FACTOR: 10.0
+    LR_SCHED: False
+    PERIOD: 2
+  WARMUP_FACTOR: 0.01
+  WARMUP_ITERS: 10
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0005
+TEST:
+  AQE:
+    ALPHA: 3.0
+    ENABLED: False
+    QE_K: 5
+    QE_TIME: 1
+  EVAL_PERIOD: 60
+  IMS_PER_BATCH: 32
+  METRIC: cosine
+  PRECISE_BN:
+    DATASET: Market1501
+    ENABLED: False
+    NUM_ITER: 300
+  RERANK:
+    ENABLED: False
+    K1: 20
+    K2: 6
+    LAMBDA: 0.3
+  ROC_ENABLED: False
+[06/04 12:49:45] fastreid INFO: Full config saved to C:\nezih_data\edu\BOUN\Courses\In process\CMPE597_Sp.Tp.DeepLearning\Project\code\LUPerson-main\fasttreid\logs\last\moco_r50_adamlarinki\market\id_0.1_fast_def\config.yaml
+[06/04 12:49:45] fastreid.utils.env INFO: Using a generated random seed 45762000
+[06/04 12:49:45] fastreid.engine.defaults INFO: Prepare training set
+[06/04 12:49:46] fastreid.data.datasets.bases INFO: => Loaded CMDM in csv format: 
+[36m| subset   | # ids   | # images   | # cameras   |
+|:---------|:--------|:-----------|:------------|
+| train    | 75      | 1170       | 6           |[0m
+[06/04 12:49:46] fastreid.engine.defaults INFO: Auto-scaling the config to num_classes=75, max_Iter=10800, wamrup_Iter=180, freeze_Iter=180, delay_Iter=540, step_Iter=[540, 1080], ckpt_Iter=800, eval_Iter=1200.
+[06/04 12:49:46] fastreid.modeling.backbones.resnet INFO: ckpt_latest_lupMocoR50.pth is not found! Please check this path.
+[06/04 18:13:22] fastreid INFO: Rank of current process: 0. World size: 1
+[06/04 18:13:23] fastreid INFO: Environment info:
+----------------------  ---------------------------------------------------------------------------------------------------------------------------
+sys.platform            win32
+Python                  3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+numpy                   1.22.3
+fastreid                0.1.0 @C:\nezih_data\edu\BOUN\Courses\In process\CMPE597_Sp.Tp.DeepLearning\Project\code\LUPerson-main\fasttreid\.\fastreid
+FASTREID_ENV_MODULE     <not set>
+PyTorch                 1.11.0+cu113 @C:\Users\nezih\AppData\Roaming\Python\Python38\site-packages\torch
+PyTorch debug build     False
+GPU available           True
+GPU 0                   NVIDIA GeForce RTX 2060
+CUDA_HOME               None
+Pillow                  9.0.1
+torchvision             0.12.0+cu113 @C:\Users\nezih\AppData\Roaming\Python\Python38\site-packages\torchvision
+torchvision arch flags  C:\Users\nezih\AppData\Roaming\Python\Python38\site-packages\torchvision\_C.pyd
+cv2                     4.5.5
+----------------------  ---------------------------------------------------------------------------------------------------------------------------
+PyTorch built with:
+  - C++ Version: 199711
+  - MSVC 192829337
+  - Intel(R) Math Kernel Library Version 2020.0.2 Product Build 20200624 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v2.5.2 (Git Hash a9302535553c73243c632ad3c4c80beec3d19a1e)
+  - OpenMP 2019
+  - LAPACK is enabled (usually provided by MKL)
+  - CPU capability usage: AVX2
+  - CUDA Runtime 11.3
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_61,code=sm_61;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86;-gencode;arch=compute_37,code=compute_37
+  - CuDNN 8.2
+  - Magma 2.5.4
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=11.3, CUDNN_VERSION=8.2.0, CXX_COMPILER=C:/actions-runner/_work/pytorch/pytorch/builder/windows/tmp_bin/sccache-cl.exe, CXX_FLAGS=/DWIN32 /D_WINDOWS /GR /EHsc /w /bigobj -DUSE_PTHREADPOOL -openmp:experimental -IC:/actions-runner/_work/pytorch/pytorch/builder/windows/mkl/include -DNDEBUG -DUSE_KINETO -DLIBKINETO_NOCUPTI -DUSE_FBGEMM -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -DEDGE_PROFILER_USE_KINETO, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.11.0, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=OFF, USE_MPI=OFF, USE_NCCL=OFF, USE_NNPACK=OFF, USE_OPENMP=ON, USE_ROCM=OFF, 
+
+[06/04 18:13:23] fastreid INFO: Command line arguments: Namespace(config_file='./configs/CMDM/mgn_R50_moco.yml', dist_url='tcp://127.0.0.1:36460', eval_only=False, finetune=False, machine_rank=0, num_gpus=0, num_machines=1, opts=['MODEL.BACKBONE.PRETRAIN_PATH', 'pre_models/ckpt_latest_lupMocoR50.pth', 'DATASETS.ROOT', '../data', 'INPUT.DO_AUTOAUG', 'False', 'TEST.EVAL_PERIOD', '60', 'DATASETS.KWARGS', 'data_name:market+split_mode:id+split_ratio:0.1', 'OUTPUT_DIR', 'logs/last/moco_r50_adamlarinki/market/id_0.1_fast_def'], resume=False)
+[06/04 18:13:23] fastreid INFO: Contents of args.config_file=./configs/CMDM/mgn_R50_moco.yml:
+_BASE_: "../Base-MGN.yml"
+
+MODEL:
+  BACKBONE:
+    WITH_IBN: False
+    EXTRA_BN: True
+  PIXEL_MEAN: [89.896, 79.200, 80.073]
+  PIXEL_STD: [63.872, 64.305, 63.839]
+INPUT:
+  REA:
+    MEAN: [0.0, 0.0, 0.0]
+  DO_AUTOAUG: False
+SOLVER:
+  HEADS_LR_FACTOR: 1.0
+  BACKBONE_BN_LR_FACTOR: 1.0
+  CHECKPOINT_PERIOD: 40
+
+DATASETS:
+  NAMES: ("CMDM",)
+  TESTS: ("CMDM",)
+  KWARGS: 'data_name:market+split_mode:id+split_ratio:0.1'
+  ROOT: "../data"
+
+TEST:
+  EVAL_PERIOD: 20
+
+OUTPUT_DIR: "../logs/cmdm/"
+
+[06/04 18:13:23] fastreid INFO: Running with full config:
+CUDNN_BENCHMARK: True
+DATALOADER:
+  NAIVE_WAY: True
+  NUM_INSTANCE: 16
+  NUM_WORKERS: 8
+  PK_SAMPLER: True
+DATASETS:
+  COMBINEALL: False
+  IS_LMDB: False
+  KWARGS: data_name:market+split_mode:id+split_ratio:0.1
+  NAMES: ('CMDM',)
+  ROOT: ../data
+  TESTS: ('CMDM',)
+INPUT:
+  AF: False
+  CJ:
+    BRIGHTNESS: 0.15
+    CONTRAST: 0.15
+    ENABLED: False
+    HUE: 0.0
+    PROB: 0.8
+    SATURATION: 0.0
+  DO_AUGMIX: False
+  DO_AUTOAUG: False
+  DO_FLIP: True
+  DO_PAD: True
+  FLIP_PROB: 0.5
+  PADDING: 10
+  PADDING_MODE: constant
+  REA:
+    ENABLED: True
+    MEAN: [0.0, 0.0, 0.0]
+    PROB: 0.5
+  RPT:
+    ENABLED: False
+    PROB: 0.5
+  SIZE_TEST: [384, 128]
+  SIZE_TRAIN: [384, 128]
+MODEL:
+  BACKBONE:
+    DEPTH: 50x
+    EXTRA_BN: True
+    FEAT_DIM: 2048
+    LAST_STRIDE: 1
+    NAME: build_resnet_backbone
+    NORM: BN
+    PRETRAIN: True
+    PRETRAIN_PATH: pre_models/ckpt_latest_lupMocoR50.pth
+    WITH_IBN: False
+    WITH_NL: False
+    WITH_SE: False
+  DEVICE: cuda
+  FREEZE_LAYERS: ['backbone', 'b1', 'b2', 'b3']
+  HEADS:
+    CLS_LAYER: circleSoftmax
+    EMBEDDING_DIM: 256
+    MARGIN: 0.35
+    NAME: EmbeddingHead
+    NECK_FEAT: after
+    NORM: BN
+    NUM_CLASSES: 0
+    POOL_LAYER: gempoolP
+    SCALE: 64
+    WITH_BNNECK: True
+  LOSSES:
+    CE:
+      ALPHA: 0.2
+      EPSILON: 0.1
+      SCALE: 1.0
+    CIRCLE:
+      ALPHA: 128
+      MARGIN: 0.25
+      SCALE: 1.0
+    FL:
+      ALPHA: 0.25
+      GAMMA: 2
+      SCALE: 1.0
+    NAME: ('CrossEntropyLoss', 'TripletLoss')
+    TRI:
+      HARD_MINING: True
+      MARGIN: 0.0
+      NORM_FEAT: False
+      SCALE: 1.0
+  META_ARCHITECTURE: MGN
+  PIXEL_MEAN: [89.896, 79.2, 80.073]
+  PIXEL_STD: [63.872, 64.305, 63.839]
+  WEIGHTS: 
+OUTPUT_DIR: logs/last/moco_r50_adamlarinki/market/id_0.1_fast_def
+SOLVER:
+  AMP_ENABLED: False
+  BACKBONE_BN_LR_FACTOR: 1.0
+  BASE_LR: 0.00035
+  BIAS_LR_FACTOR: 1.0
+  CHECKPOINT_PERIOD: 40
+  DELAY_ITERS: 30
+  ETA_MIN_LR: 7.7e-07
+  FREEZE_ITERS: 10
+  GAMMA: 0.1
+  HEADS_LR_FACTOR: 1.0
+  IMS_PER_BATCH: 64
+  MAX_ITER: 600
+  MOMENTUM: 0.9
+  OPT: Adam
+  SCHED: WarmupCosineAnnealingLR
+  STEPS: [30, 60]
+  SWA:
+    ENABLED: False
+    ETA_MIN_LR: 3.5e-06
+    ITER: 10
+    LR_FACTOR: 10.0
+    LR_SCHED: False
+    PERIOD: 2
+  WARMUP_FACTOR: 0.01
+  WARMUP_ITERS: 10
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0005
+TEST:
+  AQE:
+    ALPHA: 3.0
+    ENABLED: False
+    QE_K: 5
+    QE_TIME: 1
+  EVAL_PERIOD: 60
+  IMS_PER_BATCH: 32
+  METRIC: cosine
+  PRECISE_BN:
+    DATASET: Market1501
+    ENABLED: False
+    NUM_ITER: 300
+  RERANK:
+    ENABLED: False
+    K1: 20
+    K2: 6
+    LAMBDA: 0.3
+  ROC_ENABLED: False
+[06/04 18:13:23] fastreid INFO: Full config saved to C:\nezih_data\edu\BOUN\Courses\In process\CMPE597_Sp.Tp.DeepLearning\Project\code\LUPerson-main\fasttreid\logs\last\moco_r50_adamlarinki\market\id_0.1_fast_def\config.yaml
+[06/04 18:13:23] fastreid.utils.env INFO: Using a generated random seed 23221950
+[06/04 18:13:23] fastreid.engine.defaults INFO: Prepare training set
+[06/04 18:13:23] fastreid.data.datasets.bases INFO: => Loaded CMDM in csv format: 
+[36m| subset   | # ids   | # images   | # cameras   |
+|:---------|:--------|:-----------|:------------|
+| train    | 75      | 1170       | 6           |[0m
+[06/04 18:13:23] fastreid.engine.defaults INFO: Auto-scaling the config to num_classes=75, max_Iter=10800, wamrup_Iter=180, freeze_Iter=180, delay_Iter=540, step_Iter=[540, 1080], ckpt_Iter=800, eval_Iter=1200.
+[06/04 18:13:24] fastreid.modeling.backbones.resnet INFO: Loading pretrained model from pre_models/ckpt_latest_lupMocoR50.pth
+[06/04 18:13:30] fastreid.engine.defaults INFO: Freeze layer group "backbone,b1,b2,b3" training for 180 iterations
+[06/04 18:13:30] fastreid.utils.checkpoint INFO: No checkpoint found. Training model from scratch
+[06/04 18:13:30] fastreid.engine.train_loop INFO: Starting training from iteration 0
+[06/04 18:14:45] fastreid.utils.events INFO:  eta: 1:02:19  iter: 199  total_loss: 34.57  loss_cls_b1: 3.979  loss_cls_b2: 4.057  loss_cls_b21: 4.181  loss_cls_b22: 4.216  loss_cls_b3: 4.199  loss_cls_b31: 4.546  loss_cls_b32: 4.373  loss_cls_b33: 4.573  loss_triplet_b1: 3.725e-09  loss_triplet_b2: 2.98e-09  loss_triplet_b3: 2.98e-09  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3559  data_time: 0.0001  lr: 3.50e-04  max_mem: 3806M
+[06/04 18:16:04] fastreid.utils.events INFO:  eta: 1:07:18  iter: 399  total_loss: 5.339  loss_cls_b1: 0.3985  loss_cls_b2: 0.3511  loss_cls_b21: 0.6034  loss_cls_b22: 0.6841  loss_cls_b3: 0.4405  loss_cls_b31: 0.9711  loss_cls_b32: 0.7049  loss_cls_b33: 1.183  loss_triplet_b1: 2.98e-09  loss_triplet_b2: 5.215e-09  loss_triplet_b3: 2.98e-09  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3734  data_time: 0.0001  lr: 3.50e-04  max_mem: 3806M
+[06/04 18:17:22] fastreid.utils.events INFO:  eta: 1:06:23  iter: 599  total_loss: 3.2  loss_cls_b1: 0.2033  loss_cls_b2: 0.2206  loss_cls_b21: 0.3767  loss_cls_b22: 0.3784  loss_cls_b3: 0.229  loss_cls_b31: 0.5101  loss_cls_b32: 0.4121  loss_cls_b33: 0.5845  loss_triplet_b1: 0  loss_triplet_b2: 1.49e-09  loss_triplet_b3: 0  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3803  data_time: 0.0001  lr: 3.50e-04  max_mem: 3806M
+[06/04 18:18:42] fastreid.utils.checkpoint INFO: Saving checkpoint to logs/last/moco_r50_adamlarinki/market/id_0.1_fast_def\model_0000799.pth
+[06/04 18:18:46] fastreid.utils.events INFO:  eta: 1:05:15  iter: 799  total_loss: 2.686  loss_cls_b1: 0.1961  loss_cls_b2: 0.2113  loss_cls_b21: 0.3033  loss_cls_b22: 0.3132  loss_cls_b3: 0.1786  loss_cls_b31: 0.5049  loss_cls_b32: 0.345  loss_cls_b33: 0.5395  loss_triplet_b1: 0  loss_triplet_b2: 0  loss_triplet_b3: 0  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3843  data_time: 0.0001  lr: 3.49e-04  max_mem: 3806M
+[06/04 18:20:05] fastreid.utils.events INFO:  eta: 1:04:01  iter: 999  total_loss: 2.418  loss_cls_b1: 0.1928  loss_cls_b2: 0.2109  loss_cls_b21: 0.2697  loss_cls_b22: 0.2777  loss_cls_b3: 0.202  loss_cls_b31: 0.3709  loss_cls_b32: 0.3478  loss_cls_b33: 0.3186  loss_triplet_b1: 2.98e-09  loss_triplet_b2: 0  loss_triplet_b3: 0  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3864  data_time: 0.0002  lr: 3.48e-04  max_mem: 3806M
+[06/04 18:21:25] fastreid.engine.defaults INFO: Prepare testing set
+[06/04 18:21:25] fastreid.data.datasets.bases INFO: => Loaded CMDM in csv format: 
+[36m| subset   | # ids   | # images   | # cameras   |
+|:---------|:--------|:-----------|:------------|
+| query    | 750     | 3368       | 6           |
+| gallery  | 751     | 15913      | 6           |[0m
+[06/04 18:21:25] fastreid.evaluation.evaluator INFO: Start inference on 19281 images
+[06/04 18:21:29] fastreid.evaluation.evaluator INFO: Inference done 11/1206. 0.0190 s / batch. ETA=0:01:42
+[06/04 18:21:59] fastreid.evaluation.evaluator INFO: Inference done 297/1206. 0.0236 s / batch. ETA=0:01:35
+[06/04 18:22:29] fastreid.evaluation.evaluator INFO: Inference done 581/1206. 0.0238 s / batch. ETA=0:01:05
+[06/04 18:22:59] fastreid.evaluation.evaluator INFO: Inference done 864/1206. 0.0239 s / batch. ETA=0:00:36
+[06/04 18:23:29] fastreid.evaluation.evaluator INFO: Inference done 1147/1206. 0.0239 s / batch. ETA=0:00:06
+[06/04 18:23:35] fastreid.evaluation.evaluator INFO: Total inference time: 0:02:07.272809 (0.105972 s / batch per device)
+[06/04 18:23:35] fastreid.evaluation.evaluator INFO: Total inference pure compute time: 0:00:28 (0.024002 s / batch per device)
+[06/04 18:25:18] fastreid.evaluation.testing INFO: Evaluation results in csv format: 
+[36m| Datasets   | Rank-1   | Rank-5   | Rank-10   | mAP    | mINP   |
+|:-----------|:---------|:---------|:----------|:-------|:-------|
+| CMDM       | 70.49%   | 86.46%   | 91.83%    | 46.42% | 12.49% |[0m
+[06/04 18:25:18] fastreid.utils.events INFO:  eta: 1:02:59  iter: 1199  total_loss: 2.22  loss_cls_b1: 0.2143  loss_cls_b2: 0.1872  loss_cls_b21: 0.2875  loss_cls_b22: 0.2208  loss_cls_b3: 0.1921  loss_cls_b31: 0.3129  loss_cls_b32: 0.305  loss_cls_b33: 0.2773  loss_triplet_b1: 2.98e-09  loss_triplet_b2: 2.98e-09  loss_triplet_b3: 1.49e-09  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3882  data_time: 0.0001  lr: 3.46e-04  max_mem: 3806M
+[06/04 18:26:35] fastreid.utils.events INFO:  eta: 1:01:39  iter: 1399  total_loss: 1.578  loss_cls_b1: 0.1783  loss_cls_b2: 0.1331  loss_cls_b21: 0.221  loss_cls_b22: 0.1689  loss_cls_b3: 0.1329  loss_cls_b31: 0.2506  loss_cls_b32: 0.2164  loss_cls_b33: 0.2652  loss_triplet_b1: 0  loss_triplet_b2: 2.98e-09  loss_triplet_b3: 0  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3879  data_time: 0.0001  lr: 3.44e-04  max_mem: 3806M
+[06/04 18:27:53] fastreid.utils.checkpoint INFO: Saving checkpoint to logs/last/moco_r50_adamlarinki/market/id_0.1_fast_def\model_0001599.pth
+[06/04 18:27:57] fastreid.utils.events INFO:  eta: 1:00:09  iter: 1599  total_loss: 1.967  loss_cls_b1: 0.191  loss_cls_b2: 0.175  loss_cls_b21: 0.3099  loss_cls_b22: 0.186  loss_cls_b3: 0.1755  loss_cls_b31: 0.3085  loss_cls_b32: 0.2697  loss_cls_b33: 0.2471  loss_triplet_b1: 2.98e-09  loss_triplet_b2: 5.96e-09  loss_triplet_b3: 2.98e-09  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3882  data_time: 0.0001  lr: 3.41e-04  max_mem: 3806M
+[06/04 18:29:16] fastreid.utils.events INFO:  eta: 0:58:43  iter: 1799  total_loss: 1.674  loss_cls_b1: 0.1731  loss_cls_b2: 0.1516  loss_cls_b21: 0.22  loss_cls_b22: 0.2409  loss_cls_b3: 0.1422  loss_cls_b31: 0.2095  loss_cls_b32: 0.2414  loss_cls_b33: 0.2672  loss_triplet_b1: 5.96e-09  loss_triplet_b2: 2.98e-09  loss_triplet_b3: 3.725e-09  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3888  data_time: 0.0001  lr: 3.37e-04  max_mem: 3806M
+[06/04 18:30:35] fastreid.utils.events INFO:  eta: 0:57:26  iter: 1999  total_loss: 1.55  loss_cls_b1: 0.1544  loss_cls_b2: 0.1365  loss_cls_b21: 0.1933  loss_cls_b22: 0.2139  loss_cls_b3: 0.1412  loss_cls_b31: 0.2333  loss_cls_b32: 0.2192  loss_cls_b33: 0.2514  loss_triplet_b1: 7.451e-09  loss_triplet_b2: 5.96e-09  loss_triplet_b3: 5.96e-09  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3895  data_time: 0.0001  lr: 3.33e-04  max_mem: 3806M
+[06/04 18:31:54] fastreid.utils.events INFO:  eta: 0:56:07  iter: 2199  total_loss: 1.752  loss_cls_b1: 0.1559  loss_cls_b2: 0.1397  loss_cls_b21: 0.2385  loss_cls_b22: 0.2411  loss_cls_b3: 0.1463  loss_cls_b31: 0.2328  loss_cls_b32: 0.2245  loss_cls_b33: 0.2321  loss_triplet_b1: 5.215e-09  loss_triplet_b2: 5.96e-09  loss_triplet_b3: 1.192e-08  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3901  data_time: 0.0001  lr: 3.28e-04  max_mem: 3806M
+[06/04 18:33:14] fastreid.utils.checkpoint INFO: Saving checkpoint to logs/last/moco_r50_adamlarinki/market/id_0.1_fast_def\model_0002399.pth
+[06/04 18:33:17] fastreid.engine.defaults INFO: Prepare testing set
+[06/04 18:33:18] fastreid.data.datasets.bases INFO: => Loaded CMDM in csv format: 
+[36m| subset   | # ids   | # images   | # cameras   |
+|:---------|:--------|:-----------|:------------|
+| query    | 750     | 3368       | 6           |
+| gallery  | 751     | 15913      | 6           |[0m
+[06/04 18:33:18] fastreid.evaluation.evaluator INFO: Start inference on 19281 images
+[06/04 18:33:22] fastreid.evaluation.evaluator INFO: Inference done 11/1206. 0.0186 s / batch. ETA=0:01:42
+[06/04 18:33:52] fastreid.evaluation.evaluator INFO: Inference done 300/1206. 0.0232 s / batch. ETA=0:01:33
+[06/04 18:34:22] fastreid.evaluation.evaluator INFO: Inference done 585/1206. 0.0235 s / batch. ETA=0:01:04
+[06/04 18:34:52] fastreid.evaluation.evaluator INFO: Inference done 870/1206. 0.0236 s / batch. ETA=0:00:35
+[06/04 18:35:22] fastreid.evaluation.evaluator INFO: Inference done 1154/1206. 0.0237 s / batch. ETA=0:00:05
+[06/04 18:35:28] fastreid.evaluation.evaluator INFO: Total inference time: 0:02:06.529121 (0.105353 s / batch per device)
+[06/04 18:35:28] fastreid.evaluation.evaluator INFO: Total inference pure compute time: 0:00:28 (0.023683 s / batch per device)
+[06/04 18:37:09] fastreid.evaluation.testing INFO: Evaluation results in csv format: 
+[36m| Datasets   | Rank-1   | Rank-5   | Rank-10   | mAP    | mINP   |
+|:-----------|:---------|:---------|:----------|:-------|:-------|
+| CMDM       | 70.43%   | 87.38%   | 91.30%    | 45.41% | 11.28% |[0m
+[06/04 18:37:09] fastreid.utils.events INFO:  eta: 0:55:06  iter: 2399  total_loss: 1.717  loss_cls_b1: 0.1919  loss_cls_b2: 0.1486  loss_cls_b21: 0.2342  loss_cls_b22: 0.2068  loss_cls_b3: 0.1392  loss_cls_b31: 0.2646  loss_cls_b32: 0.1883  loss_cls_b33: 0.2766  loss_triplet_b1: 7.451e-09  loss_triplet_b2: 1.118e-08  loss_triplet_b3: 5.96e-09  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3908  data_time: 0.0001  lr: 3.22e-04  max_mem: 3806M
+[06/04 18:38:27] fastreid.utils.events INFO:  eta: 0:53:47  iter: 2599  total_loss: 1.603  loss_cls_b1: 0.1409  loss_cls_b2: 0.1486  loss_cls_b21: 0.211  loss_cls_b22: 0.2037  loss_cls_b3: 0.1347  loss_cls_b31: 0.1945  loss_cls_b32: 0.1728  loss_cls_b33: 0.2107  loss_triplet_b1: 1.49e-08  loss_triplet_b2: 1.49e-08  loss_triplet_b3: 1.267e-08  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3905  data_time: 0.0001  lr: 3.16e-04  max_mem: 3806M
+[06/04 18:39:45] fastreid.utils.events INFO:  eta: 0:52:21  iter: 2799  total_loss: 1.526  loss_cls_b1: 0.1601  loss_cls_b2: 0.1384  loss_cls_b21: 0.1836  loss_cls_b22: 0.1561  loss_cls_b3: 0.1332  loss_cls_b31: 0.239  loss_cls_b32: 0.2137  loss_cls_b33: 0.2224  loss_triplet_b1: 1.043e-08  loss_triplet_b2: 1.192e-08  loss_triplet_b3: 1.267e-08  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3904  data_time: 0.0001  lr: 3.10e-04  max_mem: 3806M
+[06/04 18:41:03] fastreid.utils.events INFO:  eta: 0:50:57  iter: 2999  total_loss: 1.569  loss_cls_b1: 0.1671  loss_cls_b2: 0.1444  loss_cls_b21: 0.1907  loss_cls_b22: 0.2033  loss_cls_b3: 0.1321  loss_cls_b31: 0.2022  loss_cls_b32: 0.2239  loss_cls_b33: 0.1895  loss_triplet_b1: 1.192e-08  loss_triplet_b2: 1.565e-08  loss_triplet_b3: 1.863e-08  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3907  data_time: 0.0001  lr: 3.03e-04  max_mem: 3806M
+[06/04 18:42:23] fastreid.utils.checkpoint INFO: Saving checkpoint to logs/last/moco_r50_adamlarinki/market/id_0.1_fast_def\model_0003199.pth
+[06/04 18:42:27] fastreid.utils.events INFO:  eta: 0:49:38  iter: 3199  total_loss: 1.443  loss_cls_b1: 0.1603  loss_cls_b2: 0.1358  loss_cls_b21: 0.1679  loss_cls_b22: 0.1898  loss_cls_b3: 0.1362  loss_cls_b31: 0.1753  loss_cls_b32: 0.2077  loss_cls_b33: 0.195  loss_triplet_b1: 2.235e-08  loss_triplet_b2: 2.086e-08  loss_triplet_b3: 2.608e-08  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3910  data_time: 0.0001  lr: 2.95e-04  max_mem: 3806M
+[06/04 18:43:46] fastreid.utils.events INFO:  eta: 0:48:16  iter: 3399  total_loss: 1.465  loss_cls_b1: 0.1468  loss_cls_b2: 0.1417  loss_cls_b21: 0.164  loss_cls_b22: 0.1682  loss_cls_b3: 0.1295  loss_cls_b31: 0.1915  loss_cls_b32: 0.1958  loss_cls_b33: 0.2027  loss_triplet_b1: 2.682e-08  loss_triplet_b2: 2.384e-08  loss_triplet_b3: 3.129e-08  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3912  data_time: 0.0001  lr: 2.87e-04  max_mem: 3806M
+[06/04 18:45:05] fastreid.engine.defaults INFO: Prepare testing set
+[06/04 18:45:06] fastreid.data.datasets.bases INFO: => Loaded CMDM in csv format: 
+[36m| subset   | # ids   | # images   | # cameras   |
+|:---------|:--------|:-----------|:------------|
+| query    | 750     | 3368       | 6           |
+| gallery  | 751     | 15913      | 6           |[0m
+[06/04 18:45:06] fastreid.evaluation.evaluator INFO: Start inference on 19281 images
+[06/04 18:45:09] fastreid.evaluation.evaluator INFO: Inference done 11/1206. 0.0200 s / batch. ETA=0:01:42
+[06/04 18:45:39] fastreid.evaluation.evaluator INFO: Inference done 298/1206. 0.0233 s / batch. ETA=0:01:34
+[06/04 18:46:09] fastreid.evaluation.evaluator INFO: Inference done 582/1206. 0.0234 s / batch. ETA=0:01:05
+[06/04 18:46:39] fastreid.evaluation.evaluator INFO: Inference done 866/1206. 0.0235 s / batch. ETA=0:00:35
+[06/04 18:47:09] fastreid.evaluation.evaluator INFO: Inference done 1150/1206. 0.0236 s / batch. ETA=0:00:05
+[06/04 18:47:15] fastreid.evaluation.evaluator INFO: Total inference time: 0:02:06.871775 (0.105638 s / batch per device)
+[06/04 18:47:15] fastreid.evaluation.evaluator INFO: Total inference pure compute time: 0:00:28 (0.023566 s / batch per device)
+[06/04 18:48:56] fastreid.evaluation.testing INFO: Evaluation results in csv format: 
+[36m| Datasets   | Rank-1   | Rank-5   | Rank-10   | mAP    | mINP   |
+|:-----------|:---------|:---------|:----------|:-------|:-------|
+| CMDM       | 70.78%   | 86.46%   | 90.86%    | 45.46% | 10.52% |[0m
+[06/04 18:48:56] fastreid.utils.events INFO:  eta: 0:47:10  iter: 3599  total_loss: 1.536  loss_cls_b1: 0.1629  loss_cls_b2: 0.1402  loss_cls_b21: 0.1831  loss_cls_b22: 0.1831  loss_cls_b3: 0.1398  loss_cls_b31: 0.2723  loss_cls_b32: 0.1817  loss_cls_b33: 0.1848  loss_triplet_b1: 3.502e-08  loss_triplet_b2: 3.353e-08  loss_triplet_b3: 3.651e-08  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3915  data_time: 0.0002  lr: 2.79e-04  max_mem: 3806M
+[06/04 18:50:13] fastreid.utils.events INFO:  eta: 0:45:51  iter: 3799  total_loss: 1.343  loss_cls_b1: 0.1443  loss_cls_b2: 0.1327  loss_cls_b21: 0.164  loss_cls_b22: 0.1938  loss_cls_b3: 0.1311  loss_cls_b31: 0.1715  loss_cls_b32: 0.167  loss_cls_b33: 0.227  loss_triplet_b1: 4.396e-08  loss_triplet_b2: 5.662e-08  loss_triplet_b3: 5.737e-08  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3912  data_time: 0.0001  lr: 2.70e-04  max_mem: 3806M
+[06/04 18:51:31] fastreid.utils.checkpoint INFO: Saving checkpoint to logs/last/moco_r50_adamlarinki/market/id_0.1_fast_def\model_0003999.pth
+[06/04 18:51:35] fastreid.utils.events INFO:  eta: 0:44:24  iter: 3999  total_loss: 1.39  loss_cls_b1: 0.1471  loss_cls_b2: 0.1327  loss_cls_b21: 0.1554  loss_cls_b22: 0.173  loss_cls_b3: 0.1294  loss_cls_b31: 0.1853  loss_cls_b32: 0.1709  loss_cls_b33: 0.1821  loss_triplet_b1: 5.29e-08  loss_triplet_b2: 6.631e-08  loss_triplet_b3: 5.141e-08  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3911  data_time: 0.0001  lr: 2.61e-04  max_mem: 3806M
+[06/04 18:52:53] fastreid.utils.events INFO:  eta: 0:43:00  iter: 4199  total_loss: 1.423  loss_cls_b1: 0.1419  loss_cls_b2: 0.1321  loss_cls_b21: 0.1545  loss_cls_b22: 0.1561  loss_cls_b3: 0.1304  loss_cls_b31: 0.2043  loss_cls_b32: 0.1678  loss_cls_b33: 0.1757  loss_triplet_b1: 5.364e-08  loss_triplet_b2: 6.855e-08  loss_triplet_b3: 8.047e-08  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3911  data_time: 0.0001  lr: 2.51e-04  max_mem: 3806M
+[06/04 18:54:13] fastreid.utils.events INFO:  eta: 0:41:43  iter: 4399  total_loss: 1.369  loss_cls_b1: 0.1431  loss_cls_b2: 0.1331  loss_cls_b21: 0.1852  loss_cls_b22: 0.1825  loss_cls_b3: 0.1286  loss_cls_b31: 0.2122  loss_cls_b32: 0.1557  loss_cls_b33: 0.1649  loss_triplet_b1: 6.78e-08  loss_triplet_b2: 1.147e-07  loss_triplet_b3: 8.345e-08  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3913  data_time: 0.0001  lr: 2.42e-04  max_mem: 3806M
+[06/04 18:55:32] fastreid.utils.events INFO:  eta: 0:40:24  iter: 4599  total_loss: 1.198  loss_cls_b1: 0.1402  loss_cls_b2: 0.1251  loss_cls_b21: 0.1459  loss_cls_b22: 0.1561  loss_cls_b3: 0.1273  loss_cls_b31: 0.2021  loss_cls_b32: 0.1377  loss_cls_b33: 0.1604  loss_triplet_b1: 6.407e-08  loss_triplet_b2: 1.252e-07  loss_triplet_b3: 8.792e-08  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3915  data_time: 0.0001  lr: 2.32e-04  max_mem: 3806M
+[06/04 18:56:51] fastreid.utils.checkpoint INFO: Saving checkpoint to logs/last/moco_r50_adamlarinki/market/id_0.1_fast_def\model_0004799.pth
+[06/04 18:56:56] fastreid.engine.defaults INFO: Prepare testing set
+[06/04 18:56:56] fastreid.data.datasets.bases INFO: => Loaded CMDM in csv format: 
+[36m| subset   | # ids   | # images   | # cameras   |
+|:---------|:--------|:-----------|:------------|
+| query    | 750     | 3368       | 6           |
+| gallery  | 751     | 15913      | 6           |[0m
+[06/04 18:56:56] fastreid.evaluation.evaluator INFO: Start inference on 19281 images
+[06/04 18:57:00] fastreid.evaluation.evaluator INFO: Inference done 11/1206. 0.0189 s / batch. ETA=0:01:42
+[06/04 18:57:30] fastreid.evaluation.evaluator INFO: Inference done 300/1206. 0.0230 s / batch. ETA=0:01:33
+[06/04 18:58:00] fastreid.evaluation.evaluator INFO: Inference done 586/1206. 0.0232 s / batch. ETA=0:01:04
+[06/04 18:58:30] fastreid.evaluation.evaluator INFO: Inference done 870/1206. 0.0233 s / batch. ETA=0:00:35
+[06/04 18:59:00] fastreid.evaluation.evaluator INFO: Inference done 1154/1206. 0.0234 s / batch. ETA=0:00:05
+[06/04 18:59:06] fastreid.evaluation.evaluator INFO: Total inference time: 0:02:06.421820 (0.105264 s / batch per device)
+[06/04 18:59:06] fastreid.evaluation.evaluator INFO: Total inference pure compute time: 0:00:28 (0.023393 s / batch per device)
+[06/04 19:00:47] fastreid.evaluation.testing INFO: Evaluation results in csv format: 
+[36m| Datasets   | Rank-1   | Rank-5   | Rank-10   | mAP    | mINP   |
+|:-----------|:---------|:---------|:----------|:-------|:-------|
+| CMDM       | 70.46%   | 86.55%   | 90.91%    | 45.69% | 11.12% |[0m
+[06/04 19:00:47] fastreid.utils.events INFO:  eta: 0:39:19  iter: 4799  total_loss: 1.438  loss_cls_b1: 0.1513  loss_cls_b2: 0.131  loss_cls_b21: 0.1831  loss_cls_b22: 0.1698  loss_cls_b3: 0.1279  loss_cls_b31: 0.1901  loss_cls_b32: 0.183  loss_cls_b33: 0.209  loss_triplet_b1: 1.252e-07  loss_triplet_b2: 1.639e-07  loss_triplet_b3: 2.004e-07  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3917  data_time: 0.0002  lr: 2.21e-04  max_mem: 3806M
+[06/04 19:02:04] fastreid.utils.events INFO:  eta: 0:38:00  iter: 4999  total_loss: 1.292  loss_cls_b1: 0.1422  loss_cls_b2: 0.1296  loss_cls_b21: 0.1785  loss_cls_b22: 0.1378  loss_cls_b3: 0.1249  loss_cls_b31: 0.1897  loss_cls_b32: 0.1515  loss_cls_b33: 0.1577  loss_triplet_b1: 8.196e-08  loss_triplet_b2: 1.252e-07  loss_triplet_b3: 1.222e-07  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3915  data_time: 0.0001  lr: 2.11e-04  max_mem: 3806M
+[06/04 19:03:22] fastreid.utils.events INFO:  eta: 0:36:36  iter: 5199  total_loss: 1.268  loss_cls_b1: 0.1515  loss_cls_b2: 0.1351  loss_cls_b21: 0.1704  loss_cls_b22: 0.1365  loss_cls_b3: 0.1285  loss_cls_b31: 0.1836  loss_cls_b32: 0.1618  loss_cls_b33: 0.1587  loss_triplet_b1: 8.792e-08  loss_triplet_b2: 1.714e-07  loss_triplet_b3: 1.81e-07  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3914  data_time: 0.0001  lr: 2.00e-04  max_mem: 3806M
+[06/04 19:04:41] fastreid.utils.events INFO:  eta: 0:35:15  iter: 5399  total_loss: 1.15  loss_cls_b1: 0.1354  loss_cls_b2: 0.1298  loss_cls_b21: 0.1384  loss_cls_b22: 0.135  loss_cls_b3: 0.1249  loss_cls_b31: 0.1559  loss_cls_b32: 0.14  loss_cls_b33: 0.1454  loss_triplet_b1: 1.155e-07  loss_triplet_b2: 1.915e-07  loss_triplet_b3: 2.69e-07  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3915  data_time: 0.0002  lr: 1.90e-04  max_mem: 3806M
+[06/04 19:06:00] fastreid.utils.checkpoint INFO: Saving checkpoint to logs/last/moco_r50_adamlarinki/market/id_0.1_fast_def\model_0005599.pth
+[06/04 19:06:04] fastreid.utils.events INFO:  eta: 0:33:55  iter: 5599  total_loss: 1.251  loss_cls_b1: 0.1377  loss_cls_b2: 0.1298  loss_cls_b21: 0.1551  loss_cls_b22: 0.1341  loss_cls_b3: 0.1244  loss_cls_b31: 0.1642  loss_cls_b32: 0.1352  loss_cls_b33: 0.1436  loss_triplet_b1: 1.341e-07  loss_triplet_b2: 2.809e-07  loss_triplet_b3: 2.22e-07  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3916  data_time: 0.0001  lr: 1.79e-04  max_mem: 3806M
+[06/04 19:07:23] fastreid.utils.events INFO:  eta: 0:32:34  iter: 5799  total_loss: 1.205  loss_cls_b1: 0.1339  loss_cls_b2: 0.127  loss_cls_b21: 0.1375  loss_cls_b22: 0.1393  loss_cls_b3: 0.1313  loss_cls_b31: 0.1366  loss_cls_b32: 0.1452  loss_cls_b33: 0.1581  loss_triplet_b1: 1.699e-07  loss_triplet_b2: 3.286e-07  loss_triplet_b3: 3.427e-07  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3917  data_time: 0.0002  lr: 1.68e-04  max_mem: 3806M
+[06/04 19:08:42] fastreid.engine.defaults INFO: Prepare testing set
+[06/04 19:08:43] fastreid.data.datasets.bases INFO: => Loaded CMDM in csv format: 
+[36m| subset   | # ids   | # images   | # cameras   |
+|:---------|:--------|:-----------|:------------|
+| query    | 750     | 3368       | 6           |
+| gallery  | 751     | 15913      | 6           |[0m
+[06/04 19:08:43] fastreid.evaluation.evaluator INFO: Start inference on 19281 images
+[06/04 19:08:46] fastreid.evaluation.evaluator INFO: Inference done 11/1206. 0.0196 s / batch. ETA=0:01:43
+[06/04 19:09:16] fastreid.evaluation.evaluator INFO: Inference done 297/1206. 0.0237 s / batch. ETA=0:01:35
+[06/04 19:09:46] fastreid.evaluation.evaluator INFO: Inference done 581/1206. 0.0236 s / batch. ETA=0:01:05
+[06/04 19:10:16] fastreid.evaluation.evaluator INFO: Inference done 865/1206. 0.0236 s / batch. ETA=0:00:35
+[06/04 19:10:46] fastreid.evaluation.evaluator INFO: Inference done 1149/1206. 0.0236 s / batch. ETA=0:00:06
+[06/04 19:10:52] fastreid.evaluation.evaluator INFO: Total inference time: 0:02:06.894053 (0.105657 s / batch per device)
+[06/04 19:10:52] fastreid.evaluation.evaluator INFO: Total inference pure compute time: 0:00:28 (0.023665 s / batch per device)
+[06/04 19:12:32] fastreid.evaluation.testing INFO: Evaluation results in csv format: 
+[36m| Datasets   | Rank-1   | Rank-5   | Rank-10   | mAP    | mINP   |
+|:-----------|:---------|:---------|:----------|:-------|:-------|
+| CMDM       | 69.98%   | 86.55%   | 91.30%    | 45.64% | 11.70% |[0m
+[06/04 19:12:32] fastreid.utils.events INFO:  eta: 0:31:25  iter: 5999  total_loss: 1.219  loss_cls_b1: 0.1383  loss_cls_b2: 0.1259  loss_cls_b21: 0.141  loss_cls_b22: 0.1434  loss_cls_b3: 0.1268  loss_cls_b31: 0.1629  loss_cls_b32: 0.1275  loss_cls_b33: 0.1569  loss_triplet_b1: 1.356e-07  loss_triplet_b2: 3.554e-07  loss_triplet_b3: 4.858e-07  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3919  data_time: 0.0002  lr: 1.58e-04  max_mem: 3806M
+[06/04 19:13:50] fastreid.utils.events INFO:  eta: 0:30:06  iter: 6199  total_loss: 1.235  loss_cls_b1: 0.1463  loss_cls_b2: 0.1286  loss_cls_b21: 0.1626  loss_cls_b22: 0.1398  loss_cls_b3: 0.1304  loss_cls_b31: 0.1479  loss_cls_b32: 0.14  loss_cls_b33: 0.1338  loss_triplet_b1: 2.488e-07  loss_triplet_b2: 4.336e-07  loss_triplet_b3: 4.888e-07  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3917  data_time: 0.0001  lr: 1.47e-04  max_mem: 3806M
+[06/04 19:15:08] fastreid.utils.checkpoint INFO: Saving checkpoint to logs/last/moco_r50_adamlarinki/market/id_0.1_fast_def\model_0006399.pth
+[06/04 19:15:12] fastreid.utils.events INFO:  eta: 0:28:42  iter: 6399  total_loss: 1.209  loss_cls_b1: 0.1404  loss_cls_b2: 0.1279  loss_cls_b21: 0.1363  loss_cls_b22: 0.154  loss_cls_b3: 0.131  loss_cls_b31: 0.1531  loss_cls_b32: 0.1442  loss_cls_b33: 0.1512  loss_triplet_b1: 3.017e-07  loss_triplet_b2: 5.774e-07  loss_triplet_b3: 6.624e-07  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3916  data_time: 0.0001  lr: 1.37e-04  max_mem: 3806M
+[06/04 19:16:31] fastreid.utils.events INFO:  eta: 0:27:21  iter: 6599  total_loss: 1.116  loss_cls_b1: 0.1339  loss_cls_b2: 0.1279  loss_cls_b21: 0.1362  loss_cls_b22: 0.1276  loss_cls_b3: 0.13  loss_cls_b31: 0.1456  loss_cls_b32: 0.129  loss_cls_b33: 0.1379  loss_triplet_b1: 2.056e-07  loss_triplet_b2: 4.739e-07  loss_triplet_b3: 4.522e-07  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3916  data_time: 0.0002  lr: 1.26e-04  max_mem: 3806M
+[06/04 19:17:50] fastreid.utils.events INFO:  eta: 0:26:04  iter: 6799  total_loss: 1.157  loss_cls_b1: 0.1312  loss_cls_b2: 0.1276  loss_cls_b21: 0.1372  loss_cls_b22: 0.1344  loss_cls_b3: 0.1285  loss_cls_b31: 0.135  loss_cls_b32: 0.125  loss_cls_b33: 0.1447  loss_triplet_b1: 2.779e-07  loss_triplet_b2: 5.908e-07  loss_triplet_b3: 5.797e-07  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3917  data_time: 0.0002  lr: 1.16e-04  max_mem: 3806M
+[06/04 19:19:09] fastreid.utils.events INFO:  eta: 0:24:45  iter: 6999  total_loss: 1.134  loss_cls_b1: 0.1377  loss_cls_b2: 0.1287  loss_cls_b21: 0.1318  loss_cls_b22: 0.1264  loss_cls_b3: 0.1302  loss_cls_b31: 0.1336  loss_cls_b32: 0.1426  loss_cls_b33: 0.1416  loss_triplet_b1: 2.995e-07  loss_triplet_b2: 5.99e-07  loss_triplet_b3: 8.106e-07  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3918  data_time: 0.0001  lr: 1.06e-04  max_mem: 3806M
+[06/04 19:20:28] fastreid.utils.checkpoint INFO: Saving checkpoint to logs/last/moco_r50_adamlarinki/market/id_0.1_fast_def\model_0007199.pth
+[06/04 19:20:32] fastreid.engine.defaults INFO: Prepare testing set
+[06/04 19:20:33] fastreid.data.datasets.bases INFO: => Loaded CMDM in csv format: 
+[36m| subset   | # ids   | # images   | # cameras   |
+|:---------|:--------|:-----------|:------------|
+| query    | 750     | 3368       | 6           |
+| gallery  | 751     | 15913      | 6           |[0m
+[06/04 19:20:33] fastreid.evaluation.evaluator INFO: Start inference on 19281 images
+[06/04 19:20:37] fastreid.evaluation.evaluator INFO: Inference done 11/1206. 0.0190 s / batch. ETA=0:01:42
+[06/04 19:21:07] fastreid.evaluation.evaluator INFO: Inference done 301/1206. 0.0233 s / batch. ETA=0:01:33
+[06/04 19:21:37] fastreid.evaluation.evaluator INFO: Inference done 587/1206. 0.0235 s / batch. ETA=0:01:04
+[06/04 19:22:07] fastreid.evaluation.evaluator INFO: Inference done 871/1206. 0.0236 s / batch. ETA=0:00:35
+[06/04 19:22:37] fastreid.evaluation.evaluator INFO: Inference done 1156/1206. 0.0237 s / batch. ETA=0:00:05
+[06/04 19:22:43] fastreid.evaluation.evaluator INFO: Total inference time: 0:02:06.197599 (0.105077 s / batch per device)
+[06/04 19:22:43] fastreid.evaluation.evaluator INFO: Total inference pure compute time: 0:00:28 (0.023685 s / batch per device)
+[06/04 19:24:24] fastreid.evaluation.testing INFO: Evaluation results in csv format: 
+[36m| Datasets   | Rank-1   | Rank-5   | Rank-10   | mAP    | mINP   |
+|:-----------|:---------|:---------|:----------|:-------|:-------|
+| CMDM       | 70.81%   | 87.08%   | 91.15%    | 45.60% | 10.88% |[0m
+[06/04 19:24:25] fastreid.utils.events INFO:  eta: 0:23:34  iter: 7199  total_loss: 1.144  loss_cls_b1: 0.1283  loss_cls_b2: 0.1305  loss_cls_b21: 0.1404  loss_cls_b22: 0.1254  loss_cls_b3: 0.1322  loss_cls_b31: 0.1321  loss_cls_b32: 0.1376  loss_cls_b33: 0.1363  loss_triplet_b1: 2.936e-07  loss_triplet_b2: 6.75e-07  loss_triplet_b3: 1.029e-06  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3920  data_time: 0.0001  lr: 9.66e-05  max_mem: 3806M
+[06/04 19:25:42] fastreid.utils.events INFO:  eta: 0:22:15  iter: 7399  total_loss: 1.115  loss_cls_b1: 0.126  loss_cls_b2: 0.1269  loss_cls_b21: 0.1301  loss_cls_b22: 0.1245  loss_cls_b3: 0.1316  loss_cls_b31: 0.1598  loss_cls_b32: 0.1203  loss_cls_b33: 0.1234  loss_triplet_b1: 4.031e-07  loss_triplet_b2: 5.767e-07  loss_triplet_b3: 6.646e-07  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3918  data_time: 0.0001  lr: 8.72e-05  max_mem: 3806M
+[06/04 19:27:00] fastreid.utils.events INFO:  eta: 0:20:54  iter: 7599  total_loss: 1.096  loss_cls_b1: 0.1305  loss_cls_b2: 0.1284  loss_cls_b21: 0.1234  loss_cls_b22: 0.1306  loss_cls_b3: 0.1319  loss_cls_b31: 0.1218  loss_cls_b32: 0.1226  loss_cls_b33: 0.1393  loss_triplet_b1: 4.001e-07  loss_triplet_b2: 8.941e-07  loss_triplet_b3: 9.634e-07  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3917  data_time: 0.0001  lr: 7.81e-05  max_mem: 3806M
+[06/04 19:28:18] fastreid.utils.events INFO:  eta: 0:19:34  iter: 7799  total_loss: 1.082  loss_cls_b1: 0.1322  loss_cls_b2: 0.1296  loss_cls_b21: 0.1298  loss_cls_b22: 0.1244  loss_cls_b3: 0.1305  loss_cls_b31: 0.1335  loss_cls_b32: 0.1244  loss_cls_b33: 0.1233  loss_triplet_b1: 3.949e-07  loss_triplet_b2: 8.136e-07  loss_triplet_b3: 1.217e-06  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3917  data_time: 0.0001  lr: 6.94e-05  max_mem: 3806M
+[06/04 19:29:38] fastreid.utils.checkpoint INFO: Saving checkpoint to logs/last/moco_r50_adamlarinki/market/id_0.1_fast_def\model_0007999.pth
+[06/04 19:29:43] fastreid.utils.events INFO:  eta: 0:18:16  iter: 7999  total_loss: 1.113  loss_cls_b1: 0.1283  loss_cls_b2: 0.1292  loss_cls_b21: 0.1241  loss_cls_b22: 0.125  loss_cls_b3: 0.1323  loss_cls_b31: 0.1233  loss_cls_b32: 0.1198  loss_cls_b33: 0.1292  loss_triplet_b1: 3.882e-07  loss_triplet_b2: 1.023e-06  loss_triplet_b3: 1.053e-06  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3919  data_time: 0.0002  lr: 6.12e-05  max_mem: 3806M
+[06/04 19:31:03] fastreid.utils.events INFO:  eta: 0:16:57  iter: 8199  total_loss: 1.079  loss_cls_b1: 0.1263  loss_cls_b2: 0.1288  loss_cls_b21: 0.1215  loss_cls_b22: 0.1256  loss_cls_b3: 0.133  loss_cls_b31: 0.123  loss_cls_b32: 0.1233  loss_cls_b33: 0.124  loss_triplet_b1: 4.873e-07  loss_triplet_b2: 1.118e-06  loss_triplet_b3: 1.349e-06  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3921  data_time: 0.0001  lr: 5.33e-05  max_mem: 3806M
+[06/04 19:32:23] fastreid.engine.defaults INFO: Prepare testing set
+[06/04 19:32:24] fastreid.data.datasets.bases INFO: => Loaded CMDM in csv format: 
+[36m| subset   | # ids   | # images   | # cameras   |
+|:---------|:--------|:-----------|:------------|
+| query    | 750     | 3368       | 6           |
+| gallery  | 751     | 15913      | 6           |[0m
+[06/04 19:32:24] fastreid.evaluation.evaluator INFO: Start inference on 19281 images
+[06/04 19:32:27] fastreid.evaluation.evaluator INFO: Inference done 11/1206. 0.0212 s / batch. ETA=0:01:45
+[06/04 19:32:57] fastreid.evaluation.evaluator INFO: Inference done 295/1206. 0.0243 s / batch. ETA=0:01:36
+[06/04 19:33:27] fastreid.evaluation.evaluator INFO: Inference done 577/1206. 0.0244 s / batch. ETA=0:01:06
+[06/04 19:33:58] fastreid.evaluation.evaluator INFO: Inference done 859/1206. 0.0245 s / batch. ETA=0:00:36
+[06/04 19:34:28] fastreid.evaluation.evaluator INFO: Inference done 1141/1206. 0.0245 s / batch. ETA=0:00:06
+[06/04 19:34:35] fastreid.evaluation.evaluator INFO: Total inference time: 0:02:07.902562 (0.106497 s / batch per device)
+[06/04 19:34:35] fastreid.evaluation.evaluator INFO: Total inference pure compute time: 0:00:29 (0.024506 s / batch per device)
+[06/04 19:36:21] fastreid.evaluation.testing INFO: Evaluation results in csv format: 
+[36m| Datasets   | Rank-1   | Rank-5   | Rank-10   | mAP    | mINP   |
+|:-----------|:---------|:---------|:----------|:-------|:-------|
+| CMDM       | 71.17%   | 86.37%   | 90.88%    | 46.55% | 11.85% |[0m
+[06/04 19:36:21] fastreid.utils.events INFO:  eta: 0:15:47  iter: 8399  total_loss: 1.063  loss_cls_b1: 0.127  loss_cls_b2: 0.1286  loss_cls_b21: 0.1237  loss_cls_b22: 0.1277  loss_cls_b3: 0.132  loss_cls_b31: 0.1243  loss_cls_b32: 0.1214  loss_cls_b33: 0.127  loss_triplet_b1: 5.26e-07  loss_triplet_b2: 1.158e-06  loss_triplet_b3: 1.09e-06  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3923  data_time: 0.0001  lr: 4.59e-05  max_mem: 3806M
+[06/04 19:37:38] fastreid.utils.events INFO:  eta: 0:14:28  iter: 8599  total_loss: 1.023  loss_cls_b1: 0.1244  loss_cls_b2: 0.1274  loss_cls_b21: 0.1243  loss_cls_b22: 0.1218  loss_cls_b3: 0.1318  loss_cls_b31: 0.1264  loss_cls_b32: 0.1193  loss_cls_b33: 0.1231  loss_triplet_b1: 6.251e-07  loss_triplet_b2: 1.445e-06  loss_triplet_b3: 1.433e-06  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3922  data_time: 0.0001  lr: 3.89e-05  max_mem: 3806M
+[06/04 19:38:57] fastreid.utils.checkpoint INFO: Saving checkpoint to logs/last/moco_r50_adamlarinki/market/id_0.1_fast_def\model_0008799.pth
+[06/04 19:39:00] fastreid.utils.events INFO:  eta: 0:13:09  iter: 8799  total_loss: 1.032  loss_cls_b1: 0.125  loss_cls_b2: 0.129  loss_cls_b21: 0.1225  loss_cls_b22: 0.1234  loss_cls_b3: 0.1322  loss_cls_b31: 0.1216  loss_cls_b32: 0.1219  loss_cls_b33: 0.1216  loss_triplet_b1: 5.692e-07  loss_triplet_b2: 1.262e-06  loss_triplet_b3: 1.334e-06  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3922  data_time: 0.0001  lr: 3.25e-05  max_mem: 3806M
+[06/04 19:40:20] fastreid.utils.events INFO:  eta: 0:11:50  iter: 8999  total_loss: 1.037  loss_cls_b1: 0.1277  loss_cls_b2: 0.1291  loss_cls_b21: 0.1205  loss_cls_b22: 0.1211  loss_cls_b3: 0.1323  loss_cls_b31: 0.1188  loss_cls_b32: 0.1203  loss_cls_b33: 0.1232  loss_triplet_b1: 5.461e-07  loss_triplet_b2: 1.302e-06  loss_triplet_b3: 1.523e-06  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3923  data_time: 0.0002  lr: 2.67e-05  max_mem: 3806M
+[06/04 19:41:40] fastreid.utils.events INFO:  eta: 0:10:31  iter: 9199  total_loss: 1.031  loss_cls_b1: 0.1291  loss_cls_b2: 0.1297  loss_cls_b21: 0.1295  loss_cls_b22: 0.1217  loss_cls_b3: 0.1327  loss_cls_b31: 0.1203  loss_cls_b32: 0.1237  loss_cls_b33: 0.1191  loss_triplet_b1: 5.938e-07  loss_triplet_b2: 1.34e-06  loss_triplet_b3: 1.558e-06  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3925  data_time: 0.0001  lr: 2.13e-05  max_mem: 3806M
+[06/04 19:43:00] fastreid.utils.events INFO:  eta: 0:09:12  iter: 9399  total_loss: 1.008  loss_cls_b1: 0.125  loss_cls_b2: 0.1296  loss_cls_b21: 0.1192  loss_cls_b22: 0.1202  loss_cls_b3: 0.1336  loss_cls_b31: 0.1184  loss_cls_b32: 0.1239  loss_cls_b33: 0.1192  loss_triplet_b1: 6.437e-07  loss_triplet_b2: 1.057e-06  loss_triplet_b3: 1.068e-06  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3926  data_time: 0.0001  lr: 1.66e-05  max_mem: 3806M
+[06/04 19:44:20] fastreid.utils.checkpoint INFO: Saving checkpoint to logs/last/moco_r50_adamlarinki/market/id_0.1_fast_def\model_0009599.pth
+[06/04 19:44:23] fastreid.engine.defaults INFO: Prepare testing set
+[06/04 19:44:24] fastreid.data.datasets.bases INFO: => Loaded CMDM in csv format: 
+[36m| subset   | # ids   | # images   | # cameras   |
+|:---------|:--------|:-----------|:------------|
+| query    | 750     | 3368       | 6           |
+| gallery  | 751     | 15913      | 6           |[0m
+[06/04 19:44:24] fastreid.evaluation.evaluator INFO: Start inference on 19281 images
+[06/04 19:44:28] fastreid.evaluation.evaluator INFO: Inference done 11/1206. 0.0198 s / batch. ETA=0:01:42
+[06/04 19:44:58] fastreid.evaluation.evaluator INFO: Inference done 297/1206. 0.0242 s / batch. ETA=0:01:35
+[06/04 19:45:28] fastreid.evaluation.evaluator INFO: Inference done 579/1206. 0.0244 s / batch. ETA=0:01:06
+[06/04 19:45:58] fastreid.evaluation.evaluator INFO: Inference done 860/1206. 0.0244 s / batch. ETA=0:00:36
+[06/04 19:46:28] fastreid.evaluation.evaluator INFO: Inference done 1141/1206. 0.0245 s / batch. ETA=0:00:06
+[06/04 19:46:35] fastreid.evaluation.evaluator INFO: Total inference time: 0:02:07.957710 (0.106543 s / batch per device)
+[06/04 19:46:35] fastreid.evaluation.evaluator INFO: Total inference pure compute time: 0:00:29 (0.024471 s / batch per device)
+[06/04 19:48:18] fastreid.evaluation.testing INFO: Evaluation results in csv format: 
+[36m| Datasets   | Rank-1   | Rank-5   | Rank-10   | mAP    | mINP   |
+|:-----------|:---------|:---------|:----------|:-------|:-------|
+| CMDM       | 73.66%   | 88.12%   | 92.22%    | 47.97% | 12.39% |[0m
+[06/04 19:48:18] fastreid.utils.events INFO:  eta: 0:07:58  iter: 9599  total_loss: 1.012  loss_cls_b1: 0.1256  loss_cls_b2: 0.1303  loss_cls_b21: 0.1232  loss_cls_b22: 0.1196  loss_cls_b3: 0.1335  loss_cls_b31: 0.1158  loss_cls_b32: 0.1212  loss_cls_b33: 0.1207  loss_triplet_b1: 6.273e-07  loss_triplet_b2: 1.349e-06  loss_triplet_b3: 1.318e-06  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3928  data_time: 0.0001  lr: 1.24e-05  max_mem: 3806M
+[06/04 19:49:36] fastreid.utils.events INFO:  eta: 0:06:38  iter: 9799  total_loss: 1.019  loss_cls_b1: 0.1254  loss_cls_b2: 0.1296  loss_cls_b21: 0.1223  loss_cls_b22: 0.1203  loss_cls_b3: 0.1316  loss_cls_b31: 0.1195  loss_cls_b32: 0.1208  loss_cls_b33: 0.1215  loss_triplet_b1: 5.878e-07  loss_triplet_b2: 1.215e-06  loss_triplet_b3: 1.708e-06  loss_triplet_b22: 0  loss_triplet_b33: 0.003907  time: 0.3927  data_time: 0.0001  lr: 8.91e-06  max_mem: 3806M
+[06/04 19:50:54] fastreid.utils.events INFO:  eta: 0:05:16  iter: 9999  total_loss: 0.9907  loss_cls_b1: 0.1241  loss_cls_b2: 0.1303  loss_cls_b21: 0.1194  loss_cls_b22: 0.1201  loss_cls_b3: 0.1333  loss_cls_b31: 0.1171  loss_cls_b32: 0.1202  loss_cls_b33: 0.1183  loss_triplet_b1: 5.499e-07  loss_triplet_b2: 1.191e-06  loss_triplet_b3: 1.356e-06  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3926  data_time: 0.0001  lr: 6.00e-06  max_mem: 3806M
+[06/04 19:52:12] fastreid.utils.events INFO:  eta: 0:03:55  iter: 10199  total_loss: 0.9998  loss_cls_b1: 0.1252  loss_cls_b2: 0.1316  loss_cls_b21: 0.1211  loss_cls_b22: 0.12  loss_cls_b3: 0.1337  loss_cls_b31: 0.1169  loss_cls_b32: 0.1224  loss_cls_b33: 0.1189  loss_triplet_b1: 6.087e-07  loss_triplet_b2: 1.384e-06  loss_triplet_b3: 1.883e-06  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3926  data_time: 0.0001  lr: 3.72e-06  max_mem: 3806M
+[06/04 19:53:31] fastreid.utils.checkpoint INFO: Saving checkpoint to logs/last/moco_r50_adamlarinki/market/id_0.1_fast_def\model_0010399.pth
+[06/04 19:53:33] fastreid.utils.events INFO:  eta: 0:02:36  iter: 10399  total_loss: 1.013  loss_cls_b1: 0.1251  loss_cls_b2: 0.13  loss_cls_b21: 0.1214  loss_cls_b22: 0.1208  loss_cls_b3: 0.1331  loss_cls_b31: 0.1244  loss_cls_b32: 0.1194  loss_cls_b33: 0.1216  loss_triplet_b1: 8.211e-07  loss_triplet_b2: 1.916e-06  loss_triplet_b3: 1.98e-06  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3927  data_time: 0.0002  lr: 2.08e-06  max_mem: 3806M
+[06/04 19:54:52] fastreid.utils.events INFO:  eta: 0:01:18  iter: 10599  total_loss: 1.002  loss_cls_b1: 0.1242  loss_cls_b2: 0.1284  loss_cls_b21: 0.1211  loss_cls_b22: 0.1212  loss_cls_b3: 0.133  loss_cls_b31: 0.1204  loss_cls_b32: 0.1202  loss_cls_b33: 0.1171  loss_triplet_b1: 5.946e-07  loss_triplet_b2: 1.496e-06  loss_triplet_b3: 1.566e-06  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3927  data_time: 0.0001  lr: 1.10e-06  max_mem: 3806M
+[06/04 19:56:11] fastreid.utils.checkpoint INFO: Saving checkpoint to logs/last/moco_r50_adamlarinki/market/id_0.1_fast_def\model_final.pth
+[06/04 19:56:14] fastreid.engine.defaults INFO: Prepare testing set
+[06/04 19:56:15] fastreid.data.datasets.bases INFO: => Loaded CMDM in csv format: 
+[36m| subset   | # ids   | # images   | # cameras   |
+|:---------|:--------|:-----------|:------------|
+| query    | 750     | 3368       | 6           |
+| gallery  | 751     | 15913      | 6           |[0m
+[06/04 19:56:15] fastreid.evaluation.evaluator INFO: Start inference on 19281 images
+[06/04 19:56:21] fastreid.evaluation.evaluator INFO: Inference done 11/1206. 0.0189 s / batch. ETA=0:01:41
+[06/04 19:56:51] fastreid.evaluation.evaluator INFO: Inference done 301/1206. 0.0230 s / batch. ETA=0:01:33
+[06/04 19:57:21] fastreid.evaluation.evaluator INFO: Inference done 587/1206. 0.0234 s / batch. ETA=0:01:04
+[06/04 19:57:51] fastreid.evaluation.evaluator INFO: Inference done 872/1206. 0.0234 s / batch. ETA=0:00:34
+[06/04 19:58:21] fastreid.evaluation.evaluator INFO: Inference done 1156/1206. 0.0235 s / batch. ETA=0:00:05
+[06/04 19:58:26] fastreid.evaluation.evaluator INFO: Total inference time: 0:02:06.255834 (0.105126 s / batch per device)
+[06/04 19:58:26] fastreid.evaluation.evaluator INFO: Total inference pure compute time: 0:00:28 (0.023465 s / batch per device)
+[06/04 20:00:09] fastreid.evaluation.testing INFO: Evaluation results in csv format: 
+[36m| Datasets   | Rank-1   | Rank-5   | Rank-10   | mAP    | mINP   |
+|:-----------|:---------|:---------|:----------|:-------|:-------|
+| CMDM       | 74.23%   | 88.18%   | 92.40%    | 48.60% | 12.80% |[0m
+[06/04 20:00:09] fastreid.utils.events INFO:  eta: 0:00:00  iter: 10799  total_loss: 0.9966  loss_cls_b1: 0.124  loss_cls_b2: 0.1297  loss_cls_b21: 0.1217  loss_cls_b22: 0.1199  loss_cls_b3: 0.1326  loss_cls_b31: 0.1156  loss_cls_b32: 0.1189  loss_cls_b33: 0.1191  loss_triplet_b1: 5.871e-07  loss_triplet_b2: 1.569e-06  loss_triplet_b3: 1.514e-06  loss_triplet_b22: 0  loss_triplet_b33: 1e-06  time: 0.3927  data_time: 0.0001  lr: 7.70e-07  max_mem: 3806M
+[06/04 20:00:09] fastreid.engine.hooks INFO: Overall training speed: 10797 iterations in 1:10:40 (0.3928 s / it)
+[06/04 20:00:09] fastreid.engine.hooks INFO: Total training time: 1:46:34 (0:35:53 on hooks)

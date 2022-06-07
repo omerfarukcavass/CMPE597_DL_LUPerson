@@ -1,0 +1,26 @@
+Use GPU: 0 for training
+Training configs:
+Namespace(T=0.1, arch='resnet50', aug_type='reid', auto_resume=True, batch_size=64, cos=True, data_path='./data/LUP/lmdbs/lmdb', dist_backend='nccl', dist_url="'tcp://localhost:13701'", distributed=0, epochs=200, eval_freq=10, eval_name='market', eval_only=True, eval_path='./data/', gpu=0, info_path='./data/LUP/lmdbs/keys.pkl', log_dir='logs/lup/moco', lr=0.3, lr_mult=0.1, mean_type='lup', mix=True, mlp=True, moco_dim=128, moco_k=8192, moco_m=0.999, momentum=0.9, multiprocessing_distributed=0, optimizer='SGD', print_freq=10, rank=0, resume='', save_freq=20, schedule=[30, 60, 80], seed=None, snap_dir='snapshots/lup/moco', start_epoch=0, warmup_epochs=0, weight_decay=0.0001, workdir='', workers=8, world_size=-1) 
+
+Training Transformers: 
+ TwoCropsTransformwith base transform: 
+Compose(
+    RandomSizedRectCrop(size=[256, 128], area_ratio=[0.640, 1.000], aspect_ratio=[2.000, 3.000]
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.3525, 0.3106, 0.314], std=[0.266, 0.2522, 0.2505])
+    RandomErasing(random_prob=0.5, earsed_area_ratio=[0.02, 0.4], earsed_aspect_ratio=[0.300, 3.333], earsing_value=[0.0, 0.0, 0.0])
+)
+Testing  Transformers: 
+ Compose(
+    Resize(size=(256, 128), interpolation=bicubic, max_size=None, antialias=None)
+    ToTensor()
+    Normalize(mean=[0.3525, 0.3106, 0.314], std=[0.266, 0.2522, 0.2505])
+) 
+
+Training set: CMDM(data_name=market, mode=train), train[img|pid|cam]=[11651|660|6])
+Testing  set: CMDM(data_name=market, mode=test), query[img|qid|qcam]=[3368|750|6], gallery[img|gid|gcam]=[15913|751|6], total[img|pid|cam]=[19281|751|6])
+Creating model 'resnet50'
+Use SGD as optimizer.
+=>rank[0] loaded checkpoint 'snapshots/lup/moco\ckpt_latest.pth' (epoch 200)
+[mAP: 1.44%], [cmc1: 4.25%], [cmc5: 10.04%], [cmc10: 14.25%]

@@ -1,0 +1,402 @@
+Use GPU: 0 for training
+=>rank[-1] no previous snapshots exist for auto-resume.
+PROGRESS: 00%
+Saving checkpoint to snapshots/lup/moco\ckpt_0000.pth Using 1.17s.
+PROGRESS: 00%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 01%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.52s.
+PROGRESS: 01%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.52s.
+PROGRESS: 02%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 02%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 03%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.60s.
+PROGRESS: 03%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 04%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 04%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 05%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.57s.
+PROGRESS: 05%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 06%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 06%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.48s.
+PROGRESS: 07%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 07%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 08%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 08%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.52s.
+PROGRESS: 09%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.53s.
+PROGRESS: 09%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 10%
+Saving checkpoint to snapshots/lup/moco\ckpt_0020.pth Using 0.66s.
+PROGRESS: 10%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 11%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 11%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 12%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 12%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 13%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 13%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 14%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.58s.
+PROGRESS: 14%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 15%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 15%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 16%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 16%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.54s.
+PROGRESS: 17%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 17%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 18%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 18%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 19%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 19%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.52s.
+PROGRESS: 20%
+Saving checkpoint to snapshots/lup/moco\ckpt_0040.pth Using 0.64s.
+PROGRESS: 20%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 21%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 21%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 22%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 22%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 23%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 23%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.48s.
+PROGRESS: 24%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 24%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 25%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 25%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 26%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 26%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 27%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 27%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 28%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.52s.
+PROGRESS: 28%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 28%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.48s.
+PROGRESS: 29%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 30%
+Saving checkpoint to snapshots/lup/moco\ckpt_0060.pth Using 0.62s.
+PROGRESS: 30%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.56s.
+PROGRESS: 31%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 31%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 32%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 32%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 33%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.47s.
+PROGRESS: 33%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 34%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 34%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 35%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.53s.
+PROGRESS: 35%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 36%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 36%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 37%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 37%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 38%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 38%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.55s.
+PROGRESS: 39%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 39%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 40%
+Saving checkpoint to snapshots/lup/moco\ckpt_0080.pth Using 0.63s.
+PROGRESS: 40%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 41%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 41%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 42%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 42%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 43%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 43%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 44%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 44%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 45%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.48s.
+PROGRESS: 45%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.52s.
+PROGRESS: 46%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 46%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.55s.
+PROGRESS: 47%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 47%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 48%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 48%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 49%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 49%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 50%
+Saving checkpoint to snapshots/lup/moco\ckpt_0100.pth Using 0.63s.
+PROGRESS: 50%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.56s.
+PROGRESS: 51%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 51%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 52%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.52s.
+PROGRESS: 52%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.48s.
+PROGRESS: 53%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 53%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 54%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 54%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 55%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 55%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 56%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.52s.
+PROGRESS: 56%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 56%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.57s.
+PROGRESS: 57%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 57%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 58%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 59%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 59%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 60%
+Saving checkpoint to snapshots/lup/moco\ckpt_0120.pth Using 0.64s.
+PROGRESS: 60%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 61%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 61%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 62%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 62%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 63%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 63%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 64%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.48s.
+PROGRESS: 64%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 65%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 65%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.47s.
+PROGRESS: 66%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 66%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 67%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.56s.
+PROGRESS: 67%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 68%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 68%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 69%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 69%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 70%
+Saving checkpoint to snapshots/lup/moco\ckpt_0140.pth Using 0.93s.
+PROGRESS: 70%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 71%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 71%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 72%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.48s.
+PROGRESS: 72%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 73%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 73%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.52s.
+PROGRESS: 74%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 74%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 75%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.47s.
+PROGRESS: 75%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.52s.
+PROGRESS: 76%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 76%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.48s.
+PROGRESS: 77%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 1.00s.
+PROGRESS: 77%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 78%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 78%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 79%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 79%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.48s.
+PROGRESS: 80%
+Saving checkpoint to snapshots/lup/moco\ckpt_0160.pth Using 0.63s.
+PROGRESS: 80%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 81%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 81%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 82%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 82%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 83%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 83%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 84%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.48s.
+PROGRESS: 84%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 85%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 85%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.48s.
+PROGRESS: 86%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 86%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 87%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.52s.
+PROGRESS: 87%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 88%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 88%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 89%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 89%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 90%
+Saving checkpoint to snapshots/lup/moco\ckpt_0180.pth Using 0.68s.
+PROGRESS: 90%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.48s.
+PROGRESS: 91%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 91%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 92%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 92%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.51s.
+PROGRESS: 93%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 93%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 94%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 94%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 95%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 95%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 96%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 96%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 97%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.52s.
+PROGRESS: 97%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 98%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.49s.
+PROGRESS: 98%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 99%
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth Using 0.50s.
+PROGRESS: 99%
+Saving checkpoint to snapshots/lup/moco\ckpt_0199.pth Using 0.63s.

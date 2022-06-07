@@ -1,0 +1,607 @@
+Use GPU: 0 for training
+Training configs:
+Namespace(T=0.1, arch='resnet50', aug_type='reid-affine', auto_resume=False, batch_size=64, cos=True, data_path='./data/LUP/lmdbs/lmdb', dist_backend='nccl', dist_url="'tcp://localhost:13701'", distributed=0, epochs=250, eval_freq=10, eval_name='market', eval_only=False, eval_path='./data/', gpu=0, info_path='./data/LUP/lmdbs/keys.pkl', log_dir='logs/lup/moco', lr=0.3, lr_mult=0.1, mean_type='lup', mix=True, mlp=True, moco_dim=128, moco_k=8192, moco_m=0.999, momentum=0.9, multiprocessing_distributed=0, optimizer='SGD', print_freq=10, rank=0, resume='', save_freq=20, schedule=[50, 100, 150, 200], seed=None, snap_dir='snapshots/lup/moco', start_epoch=0, warmup_epochs=10, weight_decay=0.0001, workdir='', workers=8, world_size=-1) 
+
+Training Transformers: 
+ TwoCropsTransformwith base transform: 
+Compose(
+    RandomSizedRectCrop(size=[256, 128], area_ratio=[0.640, 1.000], aspect_ratio=[2.000, 3.000]
+    RandomApply(
+    p=0.5
+    RandomAffine(degrees=[-10.0, 10.0], translate=(0.05, 0.15), scale=(0.9, 1.1), shear=[-2.0, 2.0])
+)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.3525, 0.3106, 0.314], std=[0.266, 0.2522, 0.2505])
+    RandomErasing(random_prob=0.5, earsed_area_ratio=[0.02, 0.4], earsed_aspect_ratio=[0.300, 3.333], earsing_value=[0.0, 0.0, 0.0])
+)
+Testing  Transformers: 
+ Compose(
+    Resize(size=(256, 128), interpolation=bicubic, max_size=None, antialias=None)
+    ToTensor()
+    Normalize(mean=[0.3525, 0.3106, 0.314], std=[0.266, 0.2522, 0.2505])
+) 
+
+Training set: CMDM(data_name=market, mode=train), train[img|pid|cam]=[11651|660|6])
+Testing  set: CMDM(data_name=market, mode=test), query[img|qid|qcam]=[3368|750|6], gallery[img|gid|gcam]=[15913|751|6], total[img|pid|cam]=[19281|751|6])
+Creating model 'resnet50'
+Use SGD as optimizer.
+PROGRESS: 00%
+2022/06/02-04:36:19: Epoch[0]; Loss=7.568; Acc=0.399; Time=60.713; LR=3.00e-01
+Evaluating Epoch[0] ...
+Epoch[0]: [mAP: 0.16%], [cmc1: 0.15%], [cmc5: 0.68%], [cmc10: 1.28%]
+Evaluation using 43.96s.
+Saving checkpoint to snapshots/lup/moco\ckpt_0000.pth PROGRESS: 00%
+2022/06/02-04:37:58: Epoch[1]; Loss=7.787; Acc=0.105; Time=53.990; LR=2.73e-01
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 00%
+2022/06/02-04:38:54: Epoch[2]; Loss=7.927; Acc=0.054; Time=54.549; LR=2.46e-01
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 01%
+2022/06/02-04:39:49: Epoch[3]; Loss=7.482; Acc=0.069; Time=54.671; LR=2.19e-01
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 01%
+2022/06/02-04:40:45: Epoch[4]; Loss=7.461; Acc=0.086; Time=54.897; LR=1.92e-01
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 02%
+2022/06/02-04:41:40: Epoch[5]; Loss=7.540; Acc=0.056; Time=54.448; LR=1.65e-01
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 02%
+2022/06/02-04:42:35: Epoch[6]; Loss=7.614; Acc=0.044; Time=54.686; LR=1.38e-01
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 02%
+2022/06/02-04:43:31: Epoch[7]; Loss=7.679; Acc=0.038; Time=54.870; LR=1.11e-01
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 03%
+2022/06/02-04:44:26: Epoch[8]; Loss=7.732; Acc=0.024; Time=54.620; LR=8.40e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 03%
+2022/06/02-04:45:22: Epoch[9]; Loss=7.715; Acc=0.017; Time=55.069; LR=5.70e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 04%
+2022/06/02-04:46:17: Epoch[10]; Loss=7.620; Acc=0.025; Time=54.965; LR=2.99e-02
+Evaluating Epoch[10] ...
+Epoch[10]: [mAP: 0.22%], [cmc1: 0.30%], [cmc5: 1.37%], [cmc10: 2.32%]
+Evaluation using 42.94s.
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 04%
+2022/06/02-04:47:55: Epoch[11]; Loss=7.549; Acc=0.031; Time=54.449; LR=2.99e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 04%
+2022/06/02-04:48:51: Epoch[12]; Loss=7.491; Acc=0.038; Time=55.082; LR=2.98e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 05%
+2022/06/02-04:49:47: Epoch[13]; Loss=7.471; Acc=0.039; Time=54.834; LR=2.98e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 05%
+2022/06/02-04:50:42: Epoch[14]; Loss=7.417; Acc=0.036; Time=54.951; LR=2.98e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 06%
+2022/06/02-04:51:38: Epoch[15]; Loss=7.402; Acc=0.028; Time=54.949; LR=2.97e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 06%
+2022/06/02-04:52:33: Epoch[16]; Loss=7.364; Acc=0.045; Time=54.713; LR=2.97e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 06%
+2022/06/02-04:53:29: Epoch[17]; Loss=7.307; Acc=0.082; Time=54.929; LR=2.97e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 07%
+2022/06/02-04:54:24: Epoch[18]; Loss=7.215; Acc=0.075; Time=54.826; LR=2.96e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 07%
+2022/06/02-04:55:20: Epoch[19]; Loss=7.162; Acc=0.073; Time=54.936; LR=2.96e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 08%
+2022/06/02-04:56:15: Epoch[20]; Loss=7.097; Acc=0.081; Time=54.553; LR=2.95e-02
+Evaluating Epoch[20] ...
+Epoch[20]: [mAP: 0.23%], [cmc1: 0.27%], [cmc5: 1.31%], [cmc10: 2.38%]
+Evaluation using 42.96s.
+Saving checkpoint to snapshots/lup/moco\ckpt_0020.pth PROGRESS: 08%
+2022/06/02-04:57:54: Epoch[21]; Loss=7.049; Acc=0.092; Time=54.400; LR=2.95e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 08%
+2022/06/02-04:58:49: Epoch[22]; Loss=7.016; Acc=0.107; Time=55.192; LR=2.94e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 09%
+2022/06/02-04:59:45: Epoch[23]; Loss=6.976; Acc=0.123; Time=55.074; LR=2.94e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 09%
+2022/06/02-05:00:40: Epoch[24]; Loss=6.942; Acc=0.135; Time=54.573; LR=2.93e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 10%
+2022/06/02-05:01:36: Epoch[25]; Loss=6.925; Acc=0.142; Time=55.370; LR=2.93e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 10%
+2022/06/02-05:02:32: Epoch[26]; Loss=6.896; Acc=0.154; Time=55.132; LR=2.92e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 10%
+2022/06/02-05:03:29: Epoch[27]; Loss=6.891; Acc=0.166; Time=55.952; LR=2.91e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 11%
+2022/06/02-05:04:24: Epoch[28]; Loss=6.857; Acc=0.177; Time=54.554; LR=2.91e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 11%
+2022/06/02-05:05:20: Epoch[29]; Loss=6.847; Acc=0.181; Time=55.498; LR=2.90e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 12%
+2022/06/02-05:06:16: Epoch[30]; Loss=6.840; Acc=0.184; Time=55.169; LR=2.89e-02
+Evaluating Epoch[30] ...
+Epoch[30]: [mAP: 0.24%], [cmc1: 0.39%], [cmc5: 1.25%], [cmc10: 2.29%]
+Evaluation using 42.62s.
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 12%
+2022/06/02-05:07:54: Epoch[31]; Loss=6.809; Acc=0.192; Time=54.397; LR=2.89e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 12%
+2022/06/02-05:08:49: Epoch[32]; Loss=6.782; Acc=0.198; Time=54.990; LR=2.88e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 13%
+2022/06/02-05:09:45: Epoch[33]; Loss=6.783; Acc=0.198; Time=54.799; LR=2.87e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 13%
+2022/06/02-05:10:40: Epoch[34]; Loss=6.786; Acc=0.184; Time=54.747; LR=2.87e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 14%
+2022/06/02-05:11:36: Epoch[35]; Loss=6.758; Acc=0.192; Time=54.848; LR=2.86e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 14%
+2022/06/02-05:12:31: Epoch[36]; Loss=6.757; Acc=0.183; Time=55.125; LR=2.85e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 14%
+2022/06/02-05:13:27: Epoch[37]; Loss=6.755; Acc=0.179; Time=55.170; LR=2.84e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 15%
+2022/06/02-05:14:23: Epoch[38]; Loss=6.756; Acc=0.169; Time=55.166; LR=2.83e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 15%
+2022/06/02-05:15:18: Epoch[39]; Loss=6.780; Acc=0.147; Time=54.694; LR=2.82e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 16%
+2022/06/02-05:16:14: Epoch[40]; Loss=6.783; Acc=0.126; Time=54.786; LR=2.81e-02
+Evaluating Epoch[40] ...
+Epoch[40]: [mAP: 0.25%], [cmc1: 0.24%], [cmc5: 1.34%], [cmc10: 2.46%]
+Evaluation using 42.76s.
+Saving checkpoint to snapshots/lup/moco\ckpt_0040.pth PROGRESS: 16%
+2022/06/02-05:17:54: Epoch[41]; Loss=6.758; Acc=0.110; Time=54.608; LR=2.81e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 16%
+2022/06/02-05:18:49: Epoch[42]; Loss=6.758; Acc=0.093; Time=54.799; LR=2.80e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 17%
+2022/06/02-05:19:45: Epoch[43]; Loss=6.768; Acc=0.082; Time=55.154; LR=2.79e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 17%
+2022/06/02-05:20:41: Epoch[44]; Loss=6.745; Acc=0.093; Time=55.196; LR=2.78e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 18%
+2022/06/02-05:21:37: Epoch[45]; Loss=6.687; Acc=0.094; Time=55.216; LR=2.77e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 18%
+2022/06/02-05:22:32: Epoch[46]; Loss=6.644; Acc=0.106; Time=55.122; LR=2.76e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 18%
+2022/06/02-05:23:28: Epoch[47]; Loss=6.613; Acc=0.098; Time=54.966; LR=2.75e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 19%
+2022/06/02-05:24:24: Epoch[48]; Loss=6.572; Acc=0.114; Time=55.158; LR=2.74e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 19%
+2022/06/02-05:25:19: Epoch[49]; Loss=6.525; Acc=0.109; Time=55.129; LR=2.72e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 20%
+2022/06/02-05:26:15: Epoch[50]; Loss=6.504; Acc=0.112; Time=55.276; LR=2.71e-02
+Evaluating Epoch[50] ...
+Epoch[50]: [mAP: 0.27%], [cmc1: 0.33%], [cmc5: 1.51%], [cmc10: 2.76%]
+Evaluation using 43.15s.
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 20%
+2022/06/02-05:27:54: Epoch[51]; Loss=6.474; Acc=0.102; Time=54.552; LR=2.70e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 20%
+2022/06/02-05:28:49: Epoch[52]; Loss=6.424; Acc=0.087; Time=55.219; LR=2.69e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 21%
+2022/06/02-05:29:45: Epoch[53]; Loss=6.393; Acc=0.077; Time=55.059; LR=2.68e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 21%
+2022/06/02-05:30:41: Epoch[54]; Loss=6.343; Acc=0.073; Time=55.135; LR=2.67e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 22%
+2022/06/02-05:31:37: Epoch[55]; Loss=6.282; Acc=0.088; Time=55.421; LR=2.66e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 22%
+2022/06/02-05:32:33: Epoch[56]; Loss=6.206; Acc=0.098; Time=55.501; LR=2.64e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 22%
+2022/06/02-05:33:29: Epoch[57]; Loss=6.083; Acc=0.121; Time=55.023; LR=2.63e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 23%
+2022/06/02-05:34:24: Epoch[58]; Loss=6.026; Acc=0.131; Time=54.919; LR=2.62e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 23%
+2022/06/02-05:35:20: Epoch[59]; Loss=5.984; Acc=0.131; Time=54.859; LR=2.61e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 24%
+2022/06/02-05:36:16: Epoch[60]; Loss=5.928; Acc=0.115; Time=55.356; LR=2.59e-02
+Evaluating Epoch[60] ...
+Epoch[60]: [mAP: 0.27%], [cmc1: 0.39%], [cmc5: 1.48%], [cmc10: 2.82%]
+Evaluation using 42.95s.
+Saving checkpoint to snapshots/lup/moco\ckpt_0060.pth PROGRESS: 24%
+2022/06/02-05:37:56: Epoch[61]; Loss=5.935; Acc=0.103; Time=54.371; LR=2.58e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 24%
+2022/06/02-05:38:51: Epoch[62]; Loss=5.893; Acc=0.108; Time=54.858; LR=2.57e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 25%
+2022/06/02-05:39:47: Epoch[63]; Loss=5.818; Acc=0.124; Time=55.303; LR=2.55e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 25%
+2022/06/02-05:40:43: Epoch[64]; Loss=5.800; Acc=0.127; Time=55.252; LR=2.54e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 26%
+2022/06/02-05:41:39: Epoch[65]; Loss=5.758; Acc=0.130; Time=55.371; LR=2.53e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 26%
+2022/06/02-05:42:34: Epoch[66]; Loss=5.754; Acc=0.134; Time=54.738; LR=2.51e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 26%
+2022/06/02-05:43:30: Epoch[67]; Loss=5.713; Acc=0.137; Time=55.551; LR=2.50e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 27%
+2022/06/02-05:44:27: Epoch[68]; Loss=5.691; Acc=0.138; Time=56.009; LR=2.48e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 27%
+2022/06/02-05:45:23: Epoch[69]; Loss=5.684; Acc=0.151; Time=55.205; LR=2.47e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 28%
+2022/06/02-05:46:18: Epoch[70]; Loss=5.657; Acc=0.146; Time=54.700; LR=2.46e-02
+Evaluating Epoch[70] ...
+Epoch[70]: [mAP: 0.27%], [cmc1: 0.30%], [cmc5: 1.31%], [cmc10: 2.82%]
+Evaluation using 43.32s.
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 28%
+2022/06/02-05:47:57: Epoch[71]; Loss=5.642; Acc=0.155; Time=54.367; LR=2.44e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 28%
+2022/06/02-05:48:52: Epoch[72]; Loss=5.618; Acc=0.159; Time=55.018; LR=2.43e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 29%
+2022/06/02-05:49:48: Epoch[73]; Loss=5.604; Acc=0.162; Time=54.783; LR=2.41e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 29%
+2022/06/02-05:50:44: Epoch[74]; Loss=5.597; Acc=0.177; Time=55.264; LR=2.40e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 30%
+2022/06/02-05:51:40: Epoch[75]; Loss=5.568; Acc=0.176; Time=54.791; LR=2.38e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 30%
+2022/06/02-05:52:35: Epoch[76]; Loss=5.558; Acc=0.186; Time=55.127; LR=2.37e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 30%
+2022/06/02-05:53:31: Epoch[77]; Loss=5.549; Acc=0.177; Time=54.967; LR=2.35e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 31%
+2022/06/02-05:54:26: Epoch[78]; Loss=5.526; Acc=0.182; Time=55.110; LR=2.34e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 31%
+2022/06/02-05:55:22: Epoch[79]; Loss=5.504; Acc=0.198; Time=54.816; LR=2.32e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 32%
+2022/06/02-05:56:18: Epoch[80]; Loss=5.512; Acc=0.195; Time=55.145; LR=2.30e-02
+Evaluating Epoch[80] ...
+Epoch[80]: [mAP: 0.26%], [cmc1: 0.27%], [cmc5: 1.43%], [cmc10: 2.85%]
+Evaluation using 42.92s.
+Saving checkpoint to snapshots/lup/moco\ckpt_0080.pth PROGRESS: 32%
+2022/06/02-05:57:58: Epoch[81]; Loss=5.507; Acc=0.199; Time=54.512; LR=2.29e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 32%
+2022/06/02-05:58:54: Epoch[82]; Loss=5.465; Acc=0.205; Time=55.281; LR=2.27e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 33%
+2022/06/02-05:59:49: Epoch[83]; Loss=5.488; Acc=0.217; Time=54.763; LR=2.26e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 33%
+2022/06/02-06:00:44: Epoch[84]; Loss=5.474; Acc=0.206; Time=54.754; LR=2.24e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 34%
+2022/06/02-06:01:40: Epoch[85]; Loss=5.445; Acc=0.218; Time=54.701; LR=2.22e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 34%
+2022/06/02-06:02:36: Epoch[86]; Loss=5.440; Acc=0.216; Time=55.090; LR=2.21e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 34%
+2022/06/02-06:03:32: Epoch[87]; Loss=5.430; Acc=0.227; Time=55.433; LR=2.19e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 35%
+2022/06/02-06:04:28: Epoch[88]; Loss=5.419; Acc=0.231; Time=54.948; LR=2.17e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 35%
+2022/06/02-06:05:23: Epoch[89]; Loss=5.400; Acc=0.232; Time=54.835; LR=2.16e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 36%
+2022/06/02-06:06:19: Epoch[90]; Loss=5.398; Acc=0.244; Time=54.945; LR=2.14e-02
+Evaluating Epoch[90] ...
+Epoch[90]: [mAP: 0.30%], [cmc1: 0.50%], [cmc5: 1.51%], [cmc10: 2.91%]
+Evaluation using 43.12s.
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 36%
+2022/06/02-06:07:58: Epoch[91]; Loss=5.389; Acc=0.239; Time=54.996; LR=2.12e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 36%
+2022/06/02-06:08:54: Epoch[92]; Loss=5.388; Acc=0.259; Time=55.105; LR=2.10e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 37%
+2022/06/02-06:09:49: Epoch[93]; Loss=5.372; Acc=0.249; Time=54.882; LR=2.09e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 37%
+2022/06/02-06:10:45: Epoch[94]; Loss=5.359; Acc=0.251; Time=55.522; LR=2.07e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 38%
+2022/06/02-06:11:41: Epoch[95]; Loss=5.363; Acc=0.254; Time=55.330; LR=2.05e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 38%
+2022/06/02-06:12:37: Epoch[96]; Loss=5.341; Acc=0.270; Time=55.224; LR=2.03e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 38%
+2022/06/02-06:13:33: Epoch[97]; Loss=5.343; Acc=0.248; Time=55.071; LR=2.02e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 39%
+2022/06/02-06:14:29: Epoch[98]; Loss=5.350; Acc=0.260; Time=54.976; LR=2.00e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 39%
+2022/06/02-06:15:25: Epoch[99]; Loss=5.343; Acc=0.272; Time=55.082; LR=1.98e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 40%
+2022/06/02-06:16:20: Epoch[100]; Loss=5.333; Acc=0.270; Time=55.167; LR=1.96e-02
+Evaluating Epoch[100] ...
+Epoch[100]: [mAP: 0.31%], [cmc1: 0.33%], [cmc5: 1.57%], [cmc10: 2.76%]
+Evaluation using 42.75s.
+Saving checkpoint to snapshots/lup/moco\ckpt_0100.pth PROGRESS: 40%
+2022/06/02-06:18:00: Epoch[101]; Loss=5.307; Acc=0.280; Time=54.810; LR=1.95e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 40%
+2022/06/02-06:18:56: Epoch[102]; Loss=5.301; Acc=0.285; Time=55.447; LR=1.93e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 41%
+2022/06/02-06:19:52: Epoch[103]; Loss=5.301; Acc=0.282; Time=55.021; LR=1.91e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 41%
+2022/06/02-06:20:47: Epoch[104]; Loss=5.305; Acc=0.290; Time=55.213; LR=1.89e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 42%
+2022/06/02-06:21:43: Epoch[105]; Loss=5.291; Acc=0.288; Time=55.109; LR=1.87e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 42%
+2022/06/02-06:22:40: Epoch[106]; Loss=5.298; Acc=0.285; Time=55.329; LR=1.85e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 42%
+2022/06/02-06:23:36: Epoch[107]; Loss=5.283; Acc=0.308; Time=55.228; LR=1.84e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 43%
+2022/06/02-06:24:31: Epoch[108]; Loss=5.268; Acc=0.290; Time=54.930; LR=1.82e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 43%
+2022/06/02-06:25:27: Epoch[109]; Loss=5.257; Acc=0.323; Time=55.180; LR=1.80e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 44%
+2022/06/02-06:26:23: Epoch[110]; Loss=5.269; Acc=0.306; Time=55.287; LR=1.78e-02
+Evaluating Epoch[110] ...
+Epoch[110]: [mAP: 0.29%], [cmc1: 0.18%], [cmc5: 1.34%], [cmc10: 2.85%]
+Evaluation using 42.60s.
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 44%
+2022/06/02-06:28:01: Epoch[111]; Loss=5.264; Acc=0.324; Time=55.008; LR=1.76e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 44%
+2022/06/02-06:28:57: Epoch[112]; Loss=5.256; Acc=0.322; Time=55.028; LR=1.74e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 45%
+2022/06/02-06:29:52: Epoch[113]; Loss=5.247; Acc=0.317; Time=55.157; LR=1.73e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 45%
+2022/06/02-06:30:48: Epoch[114]; Loss=5.246; Acc=0.330; Time=55.249; LR=1.71e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 46%
+2022/06/02-06:31:44: Epoch[115]; Loss=5.222; Acc=0.335; Time=55.528; LR=1.69e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 46%
+2022/06/02-06:32:41: Epoch[116]; Loss=5.234; Acc=0.339; Time=55.420; LR=1.67e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 46%
+2022/06/02-06:33:37: Epoch[117]; Loss=5.212; Acc=0.353; Time=55.658; LR=1.65e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 47%
+2022/06/02-06:34:33: Epoch[118]; Loss=5.212; Acc=0.348; Time=55.361; LR=1.63e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 47%
+2022/06/02-06:35:29: Epoch[119]; Loss=5.214; Acc=0.355; Time=55.127; LR=1.61e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 48%
+2022/06/02-06:36:24: Epoch[120]; Loss=5.216; Acc=0.344; Time=55.270; LR=1.59e-02
+Evaluating Epoch[120] ...
+Epoch[120]: [mAP: 0.30%], [cmc1: 0.33%], [cmc5: 1.48%], [cmc10: 2.79%]
+Evaluation using 43.07s.
+Saving checkpoint to snapshots/lup/moco\ckpt_0120.pth PROGRESS: 48%
+2022/06/02-06:38:05: Epoch[121]; Loss=5.210; Acc=0.356; Time=54.641; LR=1.58e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 48%
+2022/06/02-06:39:00: Epoch[122]; Loss=5.209; Acc=0.351; Time=55.109; LR=1.56e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 49%
+2022/06/02-06:39:56: Epoch[123]; Loss=5.203; Acc=0.365; Time=55.278; LR=1.54e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 49%
+2022/06/02-06:40:52: Epoch[124]; Loss=5.187; Acc=0.362; Time=55.333; LR=1.52e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 50%
+2022/06/02-06:41:48: Epoch[125]; Loss=5.195; Acc=0.350; Time=55.580; LR=1.50e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 50%
+2022/06/02-06:42:45: Epoch[126]; Loss=5.166; Acc=0.375; Time=55.355; LR=1.48e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 50%
+2022/06/02-06:43:40: Epoch[127]; Loss=5.183; Acc=0.365; Time=54.940; LR=1.46e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 51%
+2022/06/02-06:44:36: Epoch[128]; Loss=5.186; Acc=0.367; Time=55.584; LR=1.44e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 51%
+2022/06/02-06:45:32: Epoch[129]; Loss=5.178; Acc=0.381; Time=55.565; LR=1.42e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 52%
+2022/06/02-06:46:28: Epoch[130]; Loss=5.167; Acc=0.387; Time=55.374; LR=1.41e-02
+Evaluating Epoch[130] ...
+Epoch[130]: [mAP: 0.31%], [cmc1: 0.30%], [cmc5: 1.60%], [cmc10: 2.85%]
+Evaluation using 43.12s.
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 52%
+2022/06/02-06:48:07: Epoch[131]; Loss=5.162; Acc=0.388; Time=54.967; LR=1.39e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 52%
+2022/06/02-06:49:03: Epoch[132]; Loss=5.172; Acc=0.393; Time=55.372; LR=1.37e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 53%
+2022/06/02-06:49:59: Epoch[133]; Loss=5.166; Acc=0.386; Time=55.288; LR=1.35e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 53%
+2022/06/02-06:50:55: Epoch[134]; Loss=5.154; Acc=0.403; Time=55.384; LR=1.33e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 54%
+2022/06/02-06:51:51: Epoch[135]; Loss=5.156; Acc=0.397; Time=55.090; LR=1.31e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 54%
+2022/06/02-06:52:47: Epoch[136]; Loss=5.145; Acc=0.413; Time=55.581; LR=1.29e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 54%
+2022/06/02-06:53:43: Epoch[137]; Loss=5.153; Acc=0.388; Time=55.163; LR=1.27e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 55%
+2022/06/02-06:54:39: Epoch[138]; Loss=5.144; Acc=0.410; Time=55.373; LR=1.26e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 55%
+2022/06/02-06:55:35: Epoch[139]; Loss=5.140; Acc=0.418; Time=54.931; LR=1.24e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 56%
+2022/06/02-06:56:30: Epoch[140]; Loss=5.153; Acc=0.411; Time=55.063; LR=1.22e-02
+Evaluating Epoch[140] ...
+Epoch[140]: [mAP: 0.32%], [cmc1: 0.39%], [cmc5: 1.66%], [cmc10: 2.76%]
+Evaluation using 43.04s.
+Saving checkpoint to snapshots/lup/moco\ckpt_0140.pth PROGRESS: 56%
+2022/06/02-06:58:10: Epoch[141]; Loss=5.134; Acc=0.415; Time=54.691; LR=1.20e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 56%
+2022/06/02-06:59:06: Epoch[142]; Loss=5.142; Acc=0.418; Time=55.384; LR=1.18e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 57%
+2022/06/02-07:00:02: Epoch[143]; Loss=5.116; Acc=0.443; Time=55.284; LR=1.16e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 57%
+2022/06/02-07:00:58: Epoch[144]; Loss=5.123; Acc=0.440; Time=54.982; LR=1.15e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 57%
+2022/06/02-07:01:53: Epoch[145]; Loss=5.121; Acc=0.427; Time=54.957; LR=1.13e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 58%
+2022/06/02-07:02:49: Epoch[146]; Loss=5.127; Acc=0.437; Time=55.363; LR=1.11e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 58%
+2022/06/02-07:03:45: Epoch[147]; Loss=5.113; Acc=0.433; Time=55.367; LR=1.09e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 59%
+2022/06/02-07:04:42: Epoch[148]; Loss=5.115; Acc=0.445; Time=55.817; LR=1.07e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 59%
+2022/06/02-07:05:38: Epoch[149]; Loss=5.102; Acc=0.438; Time=55.398; LR=1.05e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 60%
+2022/06/02-07:06:33: Epoch[150]; Loss=5.104; Acc=0.444; Time=55.318; LR=1.04e-02
+Evaluating Epoch[150] ...
+Epoch[150]: [mAP: 0.33%], [cmc1: 0.45%], [cmc5: 1.84%], [cmc10: 3.33%]
+Evaluation using 42.93s.
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 60%
+2022/06/02-07:08:12: Epoch[151]; Loss=5.088; Acc=0.458; Time=54.948; LR=1.02e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 60%
+2022/06/02-07:09:08: Epoch[152]; Loss=5.091; Acc=0.463; Time=55.270; LR=1.00e-02
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 61%
+2022/06/02-07:10:05: Epoch[153]; Loss=5.083; Acc=0.452; Time=55.495; LR=9.83e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 61%
+2022/06/02-07:11:00: Epoch[154]; Loss=5.087; Acc=0.453; Time=55.157; LR=9.65e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 62%
+2022/06/02-07:11:56: Epoch[155]; Loss=5.084; Acc=0.459; Time=55.171; LR=9.48e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 62%
+2022/06/02-07:12:52: Epoch[156]; Loss=5.066; Acc=0.471; Time=55.394; LR=9.30e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 62%
+2022/06/02-07:13:48: Epoch[157]; Loss=5.068; Acc=0.462; Time=55.490; LR=9.13e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 63%
+2022/06/02-07:14:44: Epoch[158]; Loss=5.058; Acc=0.478; Time=55.417; LR=8.96e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 63%
+2022/06/02-07:15:40: Epoch[159]; Loss=5.060; Acc=0.480; Time=55.347; LR=8.78e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 64%
+2022/06/02-07:16:36: Epoch[160]; Loss=5.054; Acc=0.487; Time=55.456; LR=8.61e-03
+Evaluating Epoch[160] ...
+Epoch[160]: [mAP: 0.33%], [cmc1: 0.36%], [cmc5: 1.69%], [cmc10: 3.50%]
+Evaluation using 42.71s.
+Saving checkpoint to snapshots/lup/moco\ckpt_0160.pth PROGRESS: 64%
+2022/06/02-07:18:17: Epoch[161]; Loss=5.048; Acc=0.475; Time=54.750; LR=8.44e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 64%
+2022/06/02-07:19:13: Epoch[162]; Loss=5.034; Acc=0.507; Time=54.960; LR=8.27e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 65%
+2022/06/02-07:20:09: Epoch[163]; Loss=5.022; Acc=0.512; Time=55.388; LR=8.11e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 65%
+2022/06/02-07:21:05: Epoch[164]; Loss=5.033; Acc=0.507; Time=55.477; LR=7.94e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 66%
+2022/06/02-07:22:01: Epoch[165]; Loss=5.023; Acc=0.512; Time=55.398; LR=7.77e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 66%
+2022/06/02-07:22:58: Epoch[166]; Loss=5.017; Acc=0.515; Time=55.745; LR=7.61e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 66%
+2022/06/02-07:23:53: Epoch[167]; Loss=5.010; Acc=0.520; Time=55.231; LR=7.45e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 67%
+2022/06/02-07:24:49: Epoch[168]; Loss=5.012; Acc=0.518; Time=55.000; LR=7.28e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 67%
+2022/06/02-07:25:45: Epoch[169]; Loss=4.996; Acc=0.538; Time=55.425; LR=7.12e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 68%
+2022/06/02-07:26:41: Epoch[170]; Loss=5.003; Acc=0.541; Time=55.293; LR=6.96e-03
+Evaluating Epoch[170] ...
+Epoch[170]: [mAP: 0.36%], [cmc1: 0.50%], [cmc5: 2.11%], [cmc10: 3.80%]
+Evaluation using 42.97s.
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 68%
+2022/06/02-07:28:20: Epoch[171]; Loss=4.986; Acc=0.547; Time=55.146; LR=6.80e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 68%
+2022/06/02-07:29:15: Epoch[172]; Loss=4.981; Acc=0.553; Time=54.977; LR=6.65e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 69%
+2022/06/02-07:30:11: Epoch[173]; Loss=4.969; Acc=0.568; Time=55.561; LR=6.49e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 69%
+2022/06/02-07:31:08: Epoch[174]; Loss=4.958; Acc=0.553; Time=55.556; LR=6.34e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 70%
+2022/06/02-07:32:04: Epoch[175]; Loss=4.953; Acc=0.589; Time=55.218; LR=6.18e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 70%
+2022/06/02-07:33:00: Epoch[176]; Loss=4.947; Acc=0.577; Time=54.979; LR=6.03e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 70%
+2022/06/02-07:33:56: Epoch[177]; Loss=4.933; Acc=0.595; Time=55.445; LR=5.88e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 71%
+2022/06/02-07:34:52: Epoch[178]; Loss=4.923; Acc=0.599; Time=55.488; LR=5.73e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 71%
+2022/06/02-07:35:48: Epoch[179]; Loss=4.906; Acc=0.626; Time=55.537; LR=5.58e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 72%
+2022/06/02-07:36:44: Epoch[180]; Loss=4.886; Acc=0.629; Time=55.393; LR=5.44e-03
+Evaluating Epoch[180] ...
+Epoch[180]: [mAP: 0.42%], [cmc1: 0.59%], [cmc5: 2.46%], [cmc10: 4.07%]
+Evaluation using 43.15s.
+Saving checkpoint to snapshots/lup/moco\ckpt_0180.pth PROGRESS: 72%
+2022/06/02-07:38:25: Epoch[181]; Loss=4.884; Acc=0.627; Time=54.833; LR=5.29e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 72%
+2022/06/02-07:39:20: Epoch[182]; Loss=4.856; Acc=0.650; Time=55.027; LR=5.15e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 73%
+2022/06/02-07:40:16: Epoch[183]; Loss=4.842; Acc=0.646; Time=55.349; LR=5.01e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 73%
+2022/06/02-07:41:13: Epoch[184]; Loss=4.825; Acc=0.650; Time=55.381; LR=4.87e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 74%
+2022/06/02-07:42:09: Epoch[185]; Loss=4.804; Acc=0.663; Time=55.170; LR=4.73e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 74%
+2022/06/02-07:43:05: Epoch[186]; Loss=4.788; Acc=0.666; Time=55.443; LR=4.60e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 74%
+2022/06/02-07:44:01: Epoch[187]; Loss=4.771; Acc=0.681; Time=55.232; LR=4.46e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 75%
+2022/06/02-07:44:57: Epoch[188]; Loss=4.753; Acc=0.689; Time=55.398; LR=4.33e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 75%
+2022/06/02-07:45:53: Epoch[189]; Loss=4.735; Acc=0.693; Time=55.687; LR=4.20e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 76%
+2022/06/02-07:46:49: Epoch[190]; Loss=4.725; Acc=0.709; Time=55.155; LR=4.07e-03
+Evaluating Epoch[190] ...
+Epoch[190]: [mAP: 0.47%], [cmc1: 0.77%], [cmc5: 2.73%], [cmc10: 4.81%]
+Evaluation using 42.91s.
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 76%
+2022/06/02-07:48:27: Epoch[191]; Loss=4.710; Acc=0.715; Time=54.986; LR=3.94e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 76%
+2022/06/02-07:49:23: Epoch[192]; Loss=4.702; Acc=0.720; Time=54.885; LR=3.81e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 77%
+2022/06/02-07:50:19: Epoch[193]; Loss=4.694; Acc=0.729; Time=55.306; LR=3.69e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 77%
+2022/06/02-07:51:15: Epoch[194]; Loss=4.685; Acc=0.733; Time=55.290; LR=3.56e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 78%
+2022/06/02-07:52:11: Epoch[195]; Loss=4.677; Acc=0.739; Time=55.198; LR=3.44e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 78%
+2022/06/02-07:53:07: Epoch[196]; Loss=4.672; Acc=0.758; Time=55.077; LR=3.32e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 78%
+2022/06/02-07:54:03: Epoch[197]; Loss=4.663; Acc=0.743; Time=55.005; LR=3.21e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 79%
+2022/06/02-07:54:59: Epoch[198]; Loss=4.663; Acc=0.751; Time=55.628; LR=3.09e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 79%
+2022/06/02-07:55:55: Epoch[199]; Loss=4.645; Acc=0.772; Time=55.271; LR=2.98e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 80%
+2022/06/02-07:56:51: Epoch[200]; Loss=4.649; Acc=0.776; Time=55.067; LR=2.86e-03
+Evaluating Epoch[200] ...
+Epoch[200]: [mAP: 0.51%], [cmc1: 0.95%], [cmc5: 3.09%], [cmc10: 5.34%]
+Evaluation using 42.93s.
+Saving checkpoint to snapshots/lup/moco\ckpt_0200.pth PROGRESS: 80%
+2022/06/02-07:58:31: Epoch[201]; Loss=4.648; Acc=0.775; Time=54.915; LR=2.75e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 80%
+2022/06/02-07:59:26: Epoch[202]; Loss=4.635; Acc=0.787; Time=55.166; LR=2.65e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 81%
+2022/06/02-08:00:22: Epoch[203]; Loss=4.637; Acc=0.786; Time=55.143; LR=2.54e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 81%
+2022/06/02-08:01:18: Epoch[204]; Loss=4.639; Acc=0.789; Time=55.222; LR=2.44e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 82%
+2022/06/02-08:02:14: Epoch[205]; Loss=4.629; Acc=0.807; Time=55.351; LR=2.34e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 82%
+2022/06/02-08:03:11: Epoch[206]; Loss=4.629; Acc=0.790; Time=55.510; LR=2.24e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 82%
+2022/06/02-08:04:07: Epoch[207]; Loss=4.623; Acc=0.803; Time=55.712; LR=2.14e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 83%
+2022/06/02-08:05:03: Epoch[208]; Loss=4.618; Acc=0.795; Time=55.241; LR=2.04e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 83%
+2022/06/02-08:05:59: Epoch[209]; Loss=4.625; Acc=0.808; Time=55.558; LR=1.95e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 84%
+2022/06/02-08:06:55: Epoch[210]; Loss=4.617; Acc=0.801; Time=55.468; LR=1.86e-03
+Evaluating Epoch[210] ...
+Epoch[210]: [mAP: 0.51%], [cmc1: 0.89%], [cmc5: 3.33%], [cmc10: 5.94%]
+Evaluation using 43.04s.
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 84%
+2022/06/02-08:08:34: Epoch[211]; Loss=4.616; Acc=0.818; Time=55.016; LR=1.77e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 84%
+2022/06/02-08:09:30: Epoch[212]; Loss=4.606; Acc=0.819; Time=55.323; LR=1.68e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 85%
+2022/06/02-08:10:26: Epoch[213]; Loss=4.600; Acc=0.813; Time=55.257; LR=1.59e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 85%
+2022/06/02-08:11:22: Epoch[214]; Loss=4.609; Acc=0.811; Time=55.514; LR=1.51e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 86%
+2022/06/02-08:12:19: Epoch[215]; Loss=4.601; Acc=0.835; Time=55.515; LR=1.43e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 86%
+2022/06/02-08:13:15: Epoch[216]; Loss=4.615; Acc=0.823; Time=55.480; LR=1.35e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 86%
+2022/06/02-08:14:11: Epoch[217]; Loss=4.603; Acc=0.843; Time=55.605; LR=1.27e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 87%
+2022/06/02-08:15:07: Epoch[218]; Loss=4.601; Acc=0.835; Time=55.516; LR=1.20e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 87%
+2022/06/02-08:16:03: Epoch[219]; Loss=4.601; Acc=0.824; Time=55.297; LR=1.12e-03
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 88%
+2022/06/02-08:16:59: Epoch[220]; Loss=4.602; Acc=0.834; Time=55.420; LR=1.05e-03
+Evaluating Epoch[220] ...
+Epoch[220]: [mAP: 0.53%], [cmc1: 0.98%], [cmc5: 3.36%], [cmc10: 5.67%]
+Evaluation using 43.30s.
+Saving checkpoint to snapshots/lup/moco\ckpt_0220.pth PROGRESS: 88%
+2022/06/02-08:18:40: Epoch[221]; Loss=4.599; Acc=0.826; Time=55.143; LR=9.85e-04
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 88%
+2022/06/02-08:19:36: Epoch[222]; Loss=4.600; Acc=0.843; Time=55.317; LR=9.19e-04
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 89%
+2022/06/02-08:20:32: Epoch[223]; Loss=4.593; Acc=0.854; Time=55.519; LR=8.55e-04
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 89%
+2022/06/02-08:21:28: Epoch[224]; Loss=4.589; Acc=0.847; Time=55.263; LR=7.94e-04
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 90%
+2022/06/02-08:22:24: Epoch[225]; Loss=4.588; Acc=0.857; Time=55.490; LR=7.34e-04
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 90%
+2022/06/02-08:23:20: Epoch[226]; Loss=4.593; Acc=0.847; Time=55.333; LR=6.77e-04
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 90%
+2022/06/02-08:24:16: Epoch[227]; Loss=4.589; Acc=0.852; Time=55.168; LR=6.22e-04
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 91%
+2022/06/02-08:25:12: Epoch[228]; Loss=4.581; Acc=0.865; Time=55.325; LR=5.70e-04
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 91%
+2022/06/02-08:26:08: Epoch[229]; Loss=4.581; Acc=0.848; Time=55.568; LR=5.19e-04
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 92%
+2022/06/02-08:27:04: Epoch[230]; Loss=4.580; Acc=0.876; Time=55.005; LR=4.71e-04
+Evaluating Epoch[230] ...
+Epoch[230]: [mAP: 0.55%], [cmc1: 1.04%], [cmc5: 3.68%], [cmc10: 5.67%]
+Evaluation using 43.09s.
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 92%
+2022/06/02-08:28:43: Epoch[231]; Loss=4.584; Acc=0.869; Time=55.150; LR=4.26e-04
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 92%
+2022/06/02-08:29:39: Epoch[232]; Loss=4.581; Acc=0.863; Time=55.526; LR=3.82e-04
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 93%
+2022/06/02-08:30:35: Epoch[233]; Loss=4.579; Acc=0.862; Time=55.173; LR=3.41e-04
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 93%
+2022/06/02-08:31:31: Epoch[234]; Loss=4.580; Acc=0.852; Time=55.298; LR=3.02e-04
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 94%
+2022/06/02-08:32:27: Epoch[235]; Loss=4.584; Acc=0.861; Time=55.891; LR=2.66e-04
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 94%
+2022/06/02-08:33:23: Epoch[236]; Loss=4.573; Acc=0.871; Time=55.508; LR=2.32e-04
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 94%
+2022/06/02-08:34:19: Epoch[237]; Loss=4.574; Acc=0.863; Time=55.348; LR=2.00e-04
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 95%
+2022/06/02-08:35:15: Epoch[238]; Loss=4.575; Acc=0.868; Time=55.192; LR=1.70e-04
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 95%
+2022/06/02-08:36:11: Epoch[239]; Loss=4.580; Acc=0.859; Time=55.338; LR=1.43e-04
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 96%
+2022/06/02-08:37:07: Epoch[240]; Loss=4.577; Acc=0.865; Time=55.342; LR=1.18e-04
+Evaluating Epoch[240] ...
+Epoch[240]: [mAP: 0.57%], [cmc1: 1.10%], [cmc5: 3.86%], [cmc10: 6.24%]
+Evaluation using 43.18s.
+Saving checkpoint to snapshots/lup/moco\ckpt_0240.pth PROGRESS: 96%
+2022/06/02-08:38:47: Epoch[241]; Loss=4.582; Acc=0.862; Time=54.887; LR=9.58e-05
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 96%
+2022/06/02-08:39:43: Epoch[242]; Loss=4.573; Acc=0.860; Time=55.435; LR=7.57e-05
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 97%
+2022/06/02-08:40:39: Epoch[243]; Loss=4.574; Acc=0.887; Time=55.514; LR=5.80e-05
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 97%
+2022/06/02-08:41:35: Epoch[244]; Loss=4.567; Acc=0.870; Time=55.323; LR=4.26e-05
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 98%
+2022/06/02-08:42:31: Epoch[245]; Loss=4.574; Acc=0.863; Time=55.135; LR=2.96e-05
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 98%
+2022/06/02-08:43:27: Epoch[246]; Loss=4.568; Acc=0.871; Time=55.552; LR=1.89e-05
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 98%
+2022/06/02-08:44:23: Epoch[247]; Loss=4.564; Acc=0.867; Time=55.093; LR=1.07e-05
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 99%
+2022/06/02-08:45:19: Epoch[248]; Loss=4.574; Acc=0.878; Time=55.194; LR=4.74e-06
+Saving checkpoint to snapshots/lup/moco\ckpt_latest.pth PROGRESS: 99%
+2022/06/02-08:46:15: Epoch[249]; Loss=4.572; Acc=0.872; Time=55.727; LR=1.18e-06
+Evaluating Epoch[249] ...
+Epoch[249]: [mAP: 0.57%], [cmc1: 1.16%], [cmc5: 3.74%], [cmc10: 6.18%]
+Evaluation using 43.10s.
+Saving checkpoint to snapshots/lup/moco\ckpt_0249.pth 
