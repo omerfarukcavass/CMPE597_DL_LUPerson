@@ -19,12 +19,12 @@ In this implementation experiments are performed on Market1501 dataset. It conta
 
 |Dataset | mAP | cmc1 | path |
 |:------:|:---:|:----:|:----:|
-| Def_SSL + ft | 31.4 | 55.0 | [Model](https://drive.google.com/file/d/1bV27gwAsX8L3a3yhLoxAJueqrGmQTodV/view?usp=sharing) |.
-| CJ_SSL + ft | 32.0 | 56.1 | [Model](https://drive.google.com/file/d/1leUezGnwFu8LKG2N8Ifd2Ii9utlJU5g4/view?usp=sharing) |
-| AF_SSL + ft | 31.1 | 55.0 | [Model](https://drive.google.com/file/d/1AlXgY5bI0Lj7HClfNsl3RR8uPi2nq6Zn/view?usp=sharing) |
-| PT + Def_ft | 48.6 | 74.2 | [Model](https://drive.google.com/file/d/1BQ-zeEgZPud77OtliM9md8Z2lTz11HNh/view?usp=sharing)|
-| PT + CJ_ft | 48.2 | 73.5 | [Model](https://drive.google.com/file/d/1BQ-zeEgZPud77OtliM9md8Z2lTz11HNh/view?usp=sharing)|
-| PT + AF_ft | 46.4 | 72.4 | [Model](https://drive.google.com/file/d/1BQ-zeEgZPud77OtliM9md8Z2lTz11HNh/view?usp=sharing)|
+| Def_SSL + ft | 31.4 | 55.0 | [Model](https://drive.google.com/file/d/1RGRZTBfOSFOsci1WD_gAj-T3y7O6FcQf/view?usp=sharing) |.
+| CJ_SSL + ft | 32.0 | 56.1 | [Model](https://drive.google.com/file/d/1d8eE-Bot4uZQOoL08xsuAGk1cP5GAGJq/view?usp=sharing) |
+| AF_SSL + ft | 31.1 | 55.0 | [Model](https://drive.google.com/file/d/1JdrMd0d3sbXxW5QUURlXCbB_mZ5_ckJE/view?usp=sharing) |
+| PT + Def_ft | 48.6 | 74.2 | [Model](https://drive.google.com/file/d/1sRFv3Z-0L7nhSIfHHlAhPxpK5IPgwdeK/view?usp=sharing)|
+| PT + CJ_ft | 48.2 | 73.5 | [Model](https://drive.google.com/file/d/1OeqjROSxw5O7v47CTR0TlKE_008QYrTh/view?usp=sharing)|
+| PT + AF_ft | 46.4 | 72.4 | [Model](https://drive.google.com/file/d/128McLsQvxepLHeeEmRKCZcgGVutrHSMx/view?usp=sharing)|
 
 These numbers are a little different from those reported in our paper, and most are slightly better.
 
