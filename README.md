@@ -1,4 +1,5 @@
 The repository is for the CMPE597 Deep Learning course project. The base project is chosen as [Unsupervised Pre-training for Person Re-identification](https://arxiv.org/abs/2012.03753).
+Project paper: [Report](https://github.com/omerfarukcavass/CMPE597_DL_LUPerson/blob/main/CMPE597_FinalReport.pdf) 
 Original project: [LUPerson](https://github.com/DengpanFu/LUPerson-NL)
 
 ## LUPerson Dataset
